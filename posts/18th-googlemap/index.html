@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Map  | Joanna&#39;s Blog</title>
+
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
+
+<link rel="canonical" href="/posts/18th-googlemap/" />
+
+
+
+<meta name="author" content="Joanna Lei" />
+<meta name="description" content="串接Google Map 顯示聚會地點
+" />
+
+
+<meta name="keywords" content="JavaScript,Project">
+
+
+
+<meta name="generator" content="Hugo 0.140.1">
+
+
+<meta property="og:url" content="/posts/18th-googlemap/">
+  <meta property="og:site_name" content="Joanna&#39;s Blog">
+  <meta property="og:title" content="Google Map ">
+  <meta property="og:description" content="串接Google Map 顯示聚會地點">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-31T00:00:00+00:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Project">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Google Map ">
+  <meta name="twitter:description" content="串接Google Map 顯示聚會地點">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav class="mt-4 lg:mt-8 py-4">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!">
+        <div class="h-10 rounded-full">
+          <img src="/cat.png" alt="Joanna&#39;s Bolg" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          Joanna&#39;s Bolg
+        </a>
+        
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="About">
+    <ion-icon name="information-circle"></ion-icon>About</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="Archives">
+    <ion-icon name="archive"></ion-icon>
+    Archives
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="All Categories">
+    <ion-icon name="grid"></ion-icon>
+    All Categories
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="All Tags">
+    <ion-icon name="pricetags"></ion-icon>
+    All Tags
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="About">About</div>
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="Archives">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="All Categories">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="All Tags">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="mt-4 px-4">
+  
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  
+    
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#串接前準備">串接前準備</a>
+      <ul>
+        <li><a href="#1google-map-api">1.Google Map Api</a></li>
+        <li><a href="#2安裝套件">2.安裝套件</a></li>
+      </ul>
+    </li>
+    <li><a href="#小測試">小測試</a></li>
+    <li><a href="#串接資料庫">串接資料庫</a>
+      <ul>
+        <li><a href="#環境變數">環境變數</a></li>
+        <li><a href="#功能設定">功能設定</a></li>
+      </ul>
+    </li>
+    <li><a href="#額外功能">額外功能</a>
+      <ul>
+        <li><a href="#其他功能">其他功能</a></li>
+        <li><a href="#參考資源">參考資源</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      <div class="dream-adsense px-5">
+      
+      </div>
+    </div>
+    
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="Google Map ">
+  <meta itemprop="description" content="串接Google Map 顯示聚會地點">
+  <meta itemprop="datePublished" content="2024-12-31T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-12-31T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1986">
+  <meta itemprop="keywords" content="JavaScript,Project">
+
+      <header>
+        <h1 itemprop="headline">Google Map </h1>
+        <p class="text-sm">
+          
+            Tuesday, Dec 31, 2024
+          
+
+          | <span>4 minute read</span>
+
+          
+          | <span>Updated at
+            
+              Tuesday, Dec 31, 2024
+            </span>
+          
+        </p>
+        <div class="flex justify-between">
+          <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Joanna Lei</span>
+    
+  
+  </span>
+</div>
+
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=Google%20Map%20&amp;url=/posts/18th-googlemap/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=/posts/18th-googlemap/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=Google%20Map%20%20/posts/18th-googlemap/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      
+      <img src="/img/map.png" alt="Google Map " />
+      
+
+      <p>串接Google Map 顯示聚會地點</p>
+<p>在這篇要來介紹，如何在使用Django的框架下，設定串接Google Map<br>
+簡單的插入一個設定好地址的地圖並不難，但要接資料庫的地址來顯示，就需要做一些設定<br>
+在嘗試數次失敗，心灰意冷的時候，重新肘理思緒，更換輔助工具之後，終於成功讓頁面展現出地圖了<br>
+當地圖完整的渲染出來在頁面上，當下的心情只能說是，超～級～開～心～💞</p>
+<p>接下來就分享我的成果給大家</p>
+<h2 id="串接前準備">串接前準備</h2>
+<p>在開始之前，我們會需要準備好下面的條件：</p>
+<h3 id="1google-map-api">1.Google Map Api</h3>
+<p><a href="https://developers.google.com/maps?authuser=1&amp;hl=zh-tw">Google Maps Platform</a><br>
+請先到Google maps官網，申請帳號後，建立專案並取得API，這部分的操作相對簡單，也很多資源介紹，暫且這邊就不贅述，後面有時間再補齊。</p>
+<p>要注意的是，Google maps的專案，是需要綁定信用卡的，基本上在一定的使用量之內，是不需要額外付費的。除非超過使用量或是需要用到更進階的功能，才會需要付費。<br>
+好消息是，這次使用google map功能，都是在免付費的範圍。</p>
+<h3 id="2安裝套件">2.安裝套件</h3>
+<ul>
+<li>在Django中是使用Python語法，而google map設定會使用的的是JavaScript語法，因此這邊會安裝打包器<code>esduild</code>，將.js檔案打包後，再匯入html中。</li>
+</ul>
+<p>這邊需要注意的是，雖然在一般來說在html檔裡，可以直接使用<!-- raw HTML omitted -->放入指令，但在Django裡的html是吃不到python or js 語法的。</p>
+<pre tabindex="0"><code>npm install esbuild
+</code></pre><ul>
+<li>另外，因為會使用到API KEY，我們不希望顯示在前端被其他人玩爆😐，所以要將KEY放在環境變數中，這時候會需要套件<code>python-dotenv</code>去讀取，如果已經有安裝的這邊可以略過，</li>
+</ul>
+<pre tabindex="0"><code>poetry add python-dotenv
+</code></pre><h2 id="小測試">小測試</h2>
+<p>在這邊，將會使用到上面申請好的之後的API KEY，如果還沒複製的可以到這個頁面複製：
+<img src="/images/map_key.jpg" alt="google map api key"></p>
+<p>這個測試是確認API KEY 帶入後能成功渲染地圖出來，地圖的地址是固定的，如果不需要的可以跳過此步驟。</p>
+<p>我們到頁面上的總覽，進去會出現<code>試用API</code>
+<img src="/images/map_try1.jpg" alt="google map try1"></p>
+<p>會出現輸入地址的框，輸入一個地址，會出現輸入的位置地圖
+<img src="/images/map_try2.jpg" alt="google map try2"></p>
+<p>如果沒有直接顯示紅色地標📍，需要在地圖下方按確認。若確認位址下方就會出現程式碼標籤
+<img src="/images/map_try3.jpg" alt="google map try3"></p>
+<p>往下拉可以看到程式碼，必要放入的是三個箭頭指到的地方
+<img src="/images/map_try4.jpg" alt="google map try4"></p>
+<p>依照指示，將script中的<code>YOUR_API_KEY_HERE</code>替換成自己的API KEY</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&amp;callback=console.debug&amp;libraries=maps,marker&amp;v=beta&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span></code></pre></div><p>將程式碼放入之後，就可以在頁面上看到地圖了</p>
+<h2 id="串接資料庫">串接資料庫</h2>
+<p>小試牛刀之後，要來讓google map 可以顯示我們資料庫裡面的地址
+會編輯到的檔案有：</p>
+<ul>
+<li>環境變數- <code>settings</code>、<code>.env</code>、<code>.env.example</code></li>
+<li>功能設定- <code>models.py</code>、<code>views.py</code>、<code>urls.py</code>、<code>map.js</code>、<code>map.html</code></li>
+</ul>
+<h3 id="環境變數">環境變數</h3>
+<p>先把重要的API KEY放入環境變數之中，避免後續操作時忘記拔掉，不小心將檔案傳到公開網域的話，後果可能會很嚴重的。</p>
+<h4 id="1將api-key放入env">1.將API KEY放入<code>.env</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>GOOGLE_MAPS_API_KEY<span style="color:#f92672">=</span> YOUR_KEY
+</span></span></code></pre></div><h4 id="2在envexample加入變數">2.在<code>.env.example</code>加入變數</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>GOOGLE_MAPS_API_KEY
+</span></span></code></pre></div><h4 id="3在setting-導入環境變數">3.在<code>setting</code> 導入環境變數</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dotenv <span style="color:#f92672">import</span> load_dotenv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>load_dotenv()
+</span></span><span style="display:flex;"><span>GOOGLE_MAPS_API_KEY <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;GOOGLE_MAPS_API_KEY&#34;</span>)
+</span></span></code></pre></div><h3 id="功能設定">功能設定</h3>
+<p>接下來進入正式的設定</p>
+<h4 id="1首先在modelspy中需要有個欄位裝地址">1.首先在<code>models.py</code>中，需要有個欄位裝地址</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Event</span>(models<span style="color:#f92672">.</span>Model):
+</span></span><span style="display:flex;"><span>  title <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>  address <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">255</span>, help_text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;聚會地址，例：台北市信義區市府路1號&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>title   
+</span></span></code></pre></div><h4 id="2viewspy-設定功能">2.<code>views.py</code> 設定功能</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.shortcuts <span style="color:#f92672">import</span> render, get_object_or_404
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .models <span style="color:#f92672">import</span> Event
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">event_detail</span>(request, event_id):
+</span></span><span style="display:flex;"><span>    event <span style="color:#f92672">=</span> get_object_or_404(Event, id<span style="color:#f92672">=</span>event_id)
+</span></span><span style="display:flex;"><span>    google_maps_api_key <span style="color:#f92672">=</span> settings<span style="color:#f92672">.</span>GOOGLE_MAPS_API_KEY
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> render(request, <span style="color:#e6db74">&#39;information.html&#39;</span>, {<span style="color:#e6db74">&#39;event&#39;</span>: event, <span style="color:#e6db74">&#39;google_maps_api_key&#39;</span>: google_maps_api_key,})
+</span></span></code></pre></div><h4 id="3掛上路徑urlpy">3.掛上路徑<code>url.py</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .views <span style="color:#f92672">import</span> event_detail
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>urlpatterns <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    path(<span style="color:#e6db74">&#39;event/&lt;int:event_id&gt;/&#39;</span>, event_detail, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;event_detail&#39;</span>),
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h4 id="4在html置入">4.在<code>html</code>置入。</h4>
+<p>在Django專案中的<code>html</code>使用jinja語法，重複的指令已拆出至<code>layout.html</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{% extends &#34;base/layout.html&#34; %}
+</span></span><span style="display:flex;"><span>{% load static %}
+</span></span><span style="display:flex;"><span>{% block head %}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maps.googleapis.com/maps/api/js?key={{google_maps_api_key}}&amp;callback=initMap&amp;loading=async&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">defer</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{% static &#39;src/map.js&#39; %}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{% endblock head %}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{% block content %}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">h1</span>&gt;{{ event.title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;map&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 300px; width: 100%;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;address&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ activity.address|escapejs }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>{% endblock content %}
+</span></span></code></pre></div><h4 id="5mapjs做google-map設定讓地址能以map方式呈現">5.<code>map.js</code>做google map設定，讓地址能以map方式呈現：</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>window.<span style="color:#a6e22e">initMap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;address&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">geocoder</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Geocoder</span>();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geocoder</span>.<span style="color:#a6e22e">geocode</span>({ <span style="color:#e6db74">&#39;address&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">address</span> }, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">results</span>, <span style="color:#a6e22e">status</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;OK&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">Map</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;map&#39;</span>), {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">zoom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">geometry</span>.<span style="color:#a6e22e">location</span>
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">google</span>.<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">marker</span>.<span style="color:#a6e22e">AdvancedMarkerElement</span>({
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">geometry</span>.<span style="color:#a6e22e">location</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">map</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">map</span>
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Geocode was not successful for the following reason: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">status</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h4 id="6將mapjs打包">6.將<code>map.js</code>打包</h4>
+<p>在<code>package.jason</code>設定指令和打拋出去的檔案路徑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;map&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;esbuild ./src/script/map.js --bundle --outfile=static/src/map.js&#34;</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>執行打包</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">run</span> <span style="color:#a6e22e">map</span>
+</span></span></code></pre></div><h4 id="7-mainjs">7. <code>main.js</code></h4>
+<p>由於專案一開始，設定了<code>main.js</code>，後面為管理方便，我將googls map需要設定js指令，另外開了檔案放置，但在實際執行時，網頁無法渲染出地圖的部分，進入網頁<code>檢查&gt;console</code>發現錯誤訊息顯示，
+在<code>main.js</code>裡<code>initMap is not a function</code>因此將<code>map.js</code>匯入 <code>main.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">initMap</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./map&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">initMap</span>(); 
+</span></span></code></pre></div><h4 id="8完成">8.完成</h4>
+<p>上面設定OK的話，就會在頁面看到地圖被渲染出來囉
+而且還是資料庫裡面的地址呢，隨著每筆資料不同，也會跟著顯示對應的地圖。
+如果目前資料庫裡面沒有資料，記得先去資料庫建立好資料之後，在回來測試。
+<img src="/images/map_ok.jpg" alt="google map show on page"></p>
+<h2 id="額外功能">額外功能</h2>
+<p>在找資料的時候，發現除了顯示地標之外，另有幾個功能可以提升UX，之後有時間實際操作，再把詳細的步驟放整理成文章放上來。<br>
+這邊就先列舉功能＆參考影片</p>
+<h3 id="其他功能">其他功能</h3>
+<ul>
+<li>顯示使用者目前位置</li>
+<li>顯示線路（目前位置-目的地位置）</li>
+</ul>
+<h3 id="參考資源">參考資源</h3>
+<p><a href="https://www.youtube.com/watch?v=5DBFS1FHkRg">Google map 功能串接介紹-1(英文)</a><br>
+<a href="https://www.youtube.com/watch?v=DCmxC0NyfrA">Google map 功能串接介紹-2(英文)</a><br>
+<a href="https://www.youtube.com/watch?v=oT-iIgNuQZw">Google map 功能串接介紹-3(英文)</a><br>
+<a href="https://www.youtube.com/watch?v=sasx2ppol5c&amp;t=20s">Google map 功能串接介紹-4(英文)</a></p>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <div></div>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/18th-linepayapi/" title="Line Pay Api串接">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+            <span class="max-w-48 truncate">Line Pay Api串接</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+    </article>
+  </div>
+
+  
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">About Me</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hello I&rsquo;m Joanna, this is my blog</p>
+<p>我會在這邊分享我學習程式語言的心得與筆記</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
