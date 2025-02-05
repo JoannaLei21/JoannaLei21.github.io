@@ -6,8 +6,15 @@
     <description>Recent content in Python on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>糖果題</title>
+      <link>/posts/candy/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/candy/</guid>
+      <description>&lt;h1 id=&#34;龍哥的糖果題&#34;&gt;龍哥的糖果題&lt;/h1&gt;</description>
+    </item>
     <item>
       <title>Python-Django</title>
       <link>/posts/py-django/</link>

@@ -6,13 +6,34 @@
     <description>Recent content in Tags on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview</title>
+      <link>/tags/interview/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/interview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Job</title>
+      <link>/tags/job/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/job/</guid>
+      <description></description>
+    </item>
     <item>
       <title>JavaScript</title>
       <link>/tags/javascript/</link>
-      <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
       <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -23,24 +44,10 @@
       <description></description>
     </item>
     <item>
-      <title>Job</title>
-      <link>/tags/job/</link>
-      <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/job/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Basic Knowledge</title>
       <link>/tags/basic-knowledge/</link>
-      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
       <guid>/tags/basic-knowledge/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -48,13 +55,6 @@
       <link>/tags/html/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
       <guid>/tags/html/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Interview</title>
-      <link>/tags/interview/</link>
-      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/interview/</guid>
       <description></description>
     </item>
     <item>

@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>糖果題 | Joanna&#39;s Blog</title>
+
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
+
+<link rel="canonical" href="/posts/candy/" />
+
+
+
+<meta name="author" content="Joanna Lei" />
+<meta name="description" content="龍哥的糖果題" />
+
+
+<meta name="keywords" content="JavaScript,Python">
+
+
+
+<meta name="generator" content="Hugo 0.140.1">
+
+
+<meta property="og:url" content="/posts/candy/">
+  <meta property="og:site_name" content="Joanna&#39;s Blog">
+  <meta property="og:title" content="糖果題">
+  <meta property="og:description" content="龍哥的糖果題">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-24T00:00:00+00:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Python">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="糖果題">
+  <meta name="twitter:description" content="龍哥的糖果題">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav class="mt-4 lg:mt-8 py-4">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!">
+        <div class="h-10 rounded-full">
+          <img src="/cat.png" alt="Joanna&#39;s Bolg" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          Joanna&#39;s Bolg
+        </a>
+        
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="About">
+    <ion-icon name="information-circle"></ion-icon>About</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="Archives">
+    <ion-icon name="archive"></ion-icon>
+    Archives
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="All Categories">
+    <ion-icon name="grid"></ion-icon>
+    All Categories
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="All Tags">
+    <ion-icon name="pricetags"></ion-icon>
+    All Tags
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="About">About</div>
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="Archives">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="All Categories">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="All Tags">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="mt-4 px-4">
+  
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  
+    
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#candy-001-v">CANDY-001 V</a>
+      <ul>
+        <li><a href="#javascript-v">JavaScript V</a></li>
+        <li><a href="#python-v">Python V</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-002">CANDY-002</a>
+      <ul>
+        <li><a href="#javascript-v-1">JavaScript V</a></li>
+        <li><a href="#python">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-003">CANDY-003</a>
+      <ul>
+        <li><a href="#javascript-v-2">JavaScript V</a></li>
+        <li><a href="#python-1">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-004">CANDY-004</a>
+      <ul>
+        <li><a href="#javascript-v-3">JavaScript V</a></li>
+        <li><a href="#python-2">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-005">CANDY-005</a>
+      <ul>
+        <li><a href="#javascript-v-4">JavaScript V</a></li>
+        <li><a href="#python-3">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-006">CANDY-006</a>
+      <ul>
+        <li><a href="#javascript-v-5">JavaScript V</a></li>
+        <li><a href="#python-4">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-007">CANDY-007</a>
+      <ul>
+        <li><a href="#javascript-v-6">JavaScript V</a></li>
+        <li><a href="#python-5">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-008">CANDY-008</a>
+      <ul>
+        <li><a href="#javascript-v-7">JavaScript V</a></li>
+        <li><a href="#python-6">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-009">CANDY-009</a>
+      <ul>
+        <li><a href="#javascript-v-8">JavaScript V</a></li>
+        <li><a href="#python-7">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-010">CANDY-010</a>
+      <ul>
+        <li><a href="#javascript-v-9">JavaScript V</a></li>
+        <li><a href="#python-8">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-011">CANDY-011</a>
+      <ul>
+        <li><a href="#javascript-v-10">JavaScript V</a></li>
+        <li><a href="#python-9">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-012">CANDY-012</a>
+      <ul>
+        <li><a href="#javascript-v-11">JavaScript V</a></li>
+        <li><a href="#python-10">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-013">CANDY-013</a>
+      <ul>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#python-11">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-014">CANDY-014</a>
+      <ul>
+        <li><a href="#javascript-v-12">JavaScript V</a></li>
+        <li><a href="#python-12">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-015">CANDY-015</a>
+      <ul>
+        <li><a href="#javascript-v-13">JavaScript V</a></li>
+        <li><a href="#python-13">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-016">CANDY-016</a>
+      <ul>
+        <li><a href="#javascript-v-14">JavaScript V</a></li>
+        <li><a href="#python-14">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-017">CANDY-017</a>
+      <ul>
+        <li><a href="#javascript-v-15">JavaScript V</a></li>
+        <li><a href="#python-15">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-018">CANDY-018</a>
+      <ul>
+        <li><a href="#javascript-v-16">JavaScript V</a></li>
+        <li><a href="#python-16">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-019">CANDY-019</a>
+      <ul>
+        <li><a href="#javascript-v-17">JavaScript V</a></li>
+        <li><a href="#python-17">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-020">CANDY-020</a>
+      <ul>
+        <li><a href="#javascript-v-18">JavaScript V</a></li>
+        <li><a href="#python-18">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-021">CANDY-021</a>
+      <ul>
+        <li><a href="#javascript-1">JavaScript</a></li>
+        <li><a href="#python-19">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-022">CANDY-022</a>
+      <ul>
+        <li><a href="#javascript-2">JavaScript</a></li>
+        <li><a href="#python-20">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-023">CANDY-023</a>
+      <ul>
+        <li><a href="#javascript-3">JavaScript</a></li>
+        <li><a href="#python-21">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-024">CANDY-024</a>
+      <ul>
+        <li><a href="#javascript-4">JavaScript</a></li>
+        <li><a href="#python-22">Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#candy-025">CANDY-025</a>
+      <ul>
+        <li><a href="#javascript-5">JavaScript</a></li>
+        <li><a href="#python-23">Python</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      <div class="dream-adsense px-5">
+      
+      </div>
+    </div>
+    
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="糖果題">
+  <meta itemprop="description" content="龍哥的糖果題">
+  <meta itemprop="datePublished" content="2025-01-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="4714">
+  <meta itemprop="keywords" content="JavaScript,Python">
+
+      <header>
+        <h1 itemprop="headline">糖果題</h1>
+        <p class="text-sm">
+          
+            Friday, Jan 24, 2025
+          
+
+          | <span>10 minute read</span>
+
+          
+          | <span>Updated at
+            
+              Friday, Jan 24, 2025
+            </span>
+          
+        </p>
+        <div class="flex justify-between">
+          <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Joanna Lei</span>
+    
+  
+  </span>
+</div>
+
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e7%b3%96%e6%9e%9c%e9%a1%8c&amp;url=/posts/candy/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=/posts/candy/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e7%b3%96%e6%9e%9c%e9%a1%8c%20/posts/candy/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      
+      <img src="/img/candy.png" alt="糖果題" />
+      
+
+      <h1 id="龍哥的糖果題">龍哥的糖果題</h1>
+<h2 id="candy-001-v">CANDY-001 V</h2>
+<p>題目：找出陣列裡最小的兩個值的總和<br>
+例如：<br>
+[15, 28, 4, 2, 43] 印出 6<br>
+[23, 71, 33, 82, 1] 印出 24</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Js" data-lang="Js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumOfSmallestValues</span>(<span style="color:#a6e22e">arr</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作程式碼寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">42</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">77</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list2</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">17</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sumOfSmallestValues</span>(<span style="color:#a6e22e">list1</span>)); <span style="color:#75715e">// 印出 7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sumOfSmallestValues</span>(<span style="color:#a6e22e">list2</span>)); <span style="color:#75715e">// 印出 19
+</span></span></span></code></pre></div><h3 id="javascript-v">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>用Math.min找出最小值</li>
+<li>將1用filter移出</li>
+<li>用2找出最小值</li>
+<li>將1和3相加</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumOfSmallestValues</span>(<span style="color:#a6e22e">arr</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">min1</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(...<span style="color:#a6e22e">arr</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cut1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">n</span>) =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">min1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">min2</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(...<span style="color:#a6e22e">cut1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">min2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">42</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">77</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list2</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">17</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sumOfSmallestValues</span>(<span style="color:#a6e22e">list1</span>)); <span style="color:#75715e">// 印出 7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sumOfSmallestValues</span>(<span style="color:#a6e22e">list2</span>));
+</span></span></code></pre></div><h3 id="python-v">Python V</h3>
+<p>解題思路：</p>
+<ol>
+<li>排序</li>
+<li>將前兩個索引值相加</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sumOfSmallestValues</span>(arr) :
+</span></span><span style="display:flex;"><span>    sortedArr <span style="color:#f92672">=</span> sorted(arr);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sortedArr[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> sortedArr[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>list1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">42</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">77</span>];
+</span></span><span style="display:flex;"><span>list2 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">17</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(sumOfSmallestValues(list1)); 
+</span></span><span style="display:flex;"><span>print(sumOfSmallestValues(list2)); 
+</span></span></code></pre></div><hr>
+<h2 id="candy-002">CANDY-002</h2>
+<p>題目：請寫一小段程式，印出連續陣列裡缺少的字元</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chars1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>, <span style="color:#e6db74">&#34;f&#34;</span>, <span style="color:#e6db74">&#34;g&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chars2</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;O&#34;</span>, <span style="color:#e6db74">&#34;Q&#34;</span>, <span style="color:#e6db74">&#34;R&#34;</span>, <span style="color:#e6db74">&#34;S&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">missingChar</span>(<span style="color:#a6e22e">chars</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">missingChar</span>(<span style="color:#a6e22e">chars1</span>)); <span style="color:#75715e">// 印出 e
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">missingChar</span>(<span style="color:#a6e22e">chars2</span>)); <span style="color:#75715e">// 印出 P
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 提示：
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 可使用字串的 charCodeAt 方法...
+</span></span></span></code></pre></div><h3 id="javascript-v-1">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>當陣列裡的字元是連續時，charCodeAt()出來的unicode應當是連續的, 當後面的字元跳一號時，unicode會增加超過1</li>
+<li>因此先判斷後位者的unicode印出來的字元，是否等於前一位的 unicode＋1印出來的字元</li>
+<li>若不是則代表跳號，印出此字元</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chars1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>, <span style="color:#e6db74">&#34;f&#34;</span>, <span style="color:#e6db74">&#34;g&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chars2</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;O&#34;</span>, <span style="color:#e6db74">&#34;Q&#34;</span>, <span style="color:#e6db74">&#34;R&#34;</span>, <span style="color:#e6db74">&#34;S&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">missingChar</span>(<span style="color:#a6e22e">chars</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">chars</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">!==</span> String.<span style="color:#a6e22e">fromCharCode</span>(<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> String.<span style="color:#a6e22e">fromCharCode</span>(<span style="color:#a6e22e">chars</span>[<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    } 
+</span></span><span style="display:flex;"><span>  } 
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">missingChar</span>(<span style="color:#a6e22e">chars1</span>)); <span style="color:#75715e">// 印出 e
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">missingChar</span>(<span style="color:#a6e22e">chars2</span>)); <span style="color:#75715e">// 印出 P
+</span></span></span></code></pre></div><h3 id="python">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-003">CANDY-003</h2>
+<p>題目：完成函數的內容，把陣列裡的 0 都移到最後面</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> [<span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;a&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">moveZerosToEnd</span>(<span style="color:#a6e22e">arr</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 程式碼寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">moveZerosToEnd</span>(<span style="color:#a6e22e">list</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>); <span style="color:#75715e">// 印出 [false, 1, -1, 2, 1, 3, &#34;a&#34;, 0, 0]
+</span></span></span></code></pre></div><h3 id="javascript-v-2">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>先把0給抓出來</li>
+<li>再塞回陣列最後面<br>
+or</li>
+<li>將陣列分成有0沒有0</li>
+<li>兩個在連接再一起。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> [<span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;a&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">moveZerosToEnd</span>(<span style="color:#a6e22e">arr</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">withZero</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">withoutZero</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">a</span> =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">withoutZero</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">withZero</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">moveZerosToEnd</span>(<span style="color:#a6e22e">list</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>);
+</span></span></code></pre></div><h3 id="python-1">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-004">CANDY-004</h2>
+<p>題目：完成函數的內容，把傳進去的秒數變成平常人類看的懂的時間格式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#a6e22e">seconds</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 印出 00:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">59</span>)); <span style="color:#75715e">// 印出 00:00:59
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">60</span>)); <span style="color:#75715e">// 印出 00:01:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">90</span>)); <span style="color:#75715e">// 印出 00:01:30
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">3599</span>)); <span style="color:#75715e">// 印出 00:59:59
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">3600</span>)); <span style="color:#75715e">// 印出 01:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">45296</span>)); <span style="color:#75715e">// 印出 12:34:56
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">86399</span>)); <span style="color:#75715e">// 印出 23:59:59
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">86400</span>)); <span style="color:#75715e">// 印出 24:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">359999</span>)); <span style="color:#75715e">// 印出 99:59:59
+</span></span></span></code></pre></div><h3 id="javascript-v-3">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>最終要呈現為00:00:00，因此宣告三個常數並要呈現為  hr : min : sec</li>
+<li>依照時間單位換算 1小時=3600秒， 1分鐘=60秒(用Math.floor()求計算整數)，60除不盡的餘數為剩餘秒數</li>
+<li>依照格式，要兩個數字，用padStar確保長度，而padStar針對字串作用，故最後return時，先將hr/min/sec轉字串後再套padStar</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#a6e22e">seconds</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hr</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">seconds</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3600</span>); 
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">seconds</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3600</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>); 
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">seconds</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">60</span>; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">hr</span>.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">min</span>.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">sec</span>.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 印出 00:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">59</span>)); <span style="color:#75715e">// 印出 00:00:59
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">60</span>)); <span style="color:#75715e">// 印出 00:01:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">90</span>)); <span style="color:#75715e">// 印出 00:01:30
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">3599</span>)); <span style="color:#75715e">// 印出 00:59:59
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">3600</span>)); <span style="color:#75715e">// 印出 01:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">45296</span>)); <span style="color:#75715e">// 印出 12:34:56
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">86399</span>)); <span style="color:#75715e">// 印出 23:59:59
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">86400</span>)); <span style="color:#75715e">// 印出 24:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">humanReadableTimer</span>(<span style="color:#ae81ff">359999</span>)); <span style="color:#75715e">// 印出 99:59:59
+</span></span></span></code></pre></div><h3 id="python-2">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-005">CANDY-005</h2>
+<p>題目：完成函數的內容，把傳進去的數字的每個位數平方之後組合在一起</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">squareDigits</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">squareDigits</span>(<span style="color:#ae81ff">3212</span>)); <span style="color:#75715e">// 印出 9414
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">squareDigits</span>(<span style="color:#ae81ff">2112</span>)); <span style="color:#75715e">// 印出 4114
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">squareDigits</span>(<span style="color:#ae81ff">387</span>)); <span style="color:#75715e">// 印出 96449
+</span></span></span></code></pre></div><h3 id="javascript-v-4">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>先將數字切分-數字加“”變字串，用.split切開並成為陣列</li>
+<li>平方-.map讓陣列內的數值平方</li>
+<li>陣列字元串起來-.join可以把陣列中的元素串接出來</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">squareDigits</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">num</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#34;</span> ).<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">squareDigits</span>(<span style="color:#ae81ff">3212</span>)); <span style="color:#75715e">// 印出 9414
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">squareDigits</span>(<span style="color:#ae81ff">2112</span>)); <span style="color:#75715e">// 印出 4114
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">squareDigits</span>(<span style="color:#ae81ff">387</span>)); <span style="color:#75715e">// 印出 96449
+</span></span></span></code></pre></div><h3 id="python-3">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-006">CANDY-006</h2>
+<p>題目：找出在數字陣列裡跟其它元素不一樣的值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findDifferent</span>(<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findDifferent</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>])); <span style="color:#75715e">// 印出 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findDifferent</span>([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>])); <span style="color:#75715e">// 印出 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findDifferent</span>([<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>])); <span style="color:#75715e">// 印出 8
+</span></span></span></code></pre></div><h3 id="javascript-v-5">JavaScript V</h3>
+<p>解題思路：
+所有的陣列，只有一個異類，因此<br>
+1.如果它在第一個索引值，那他一定不等於第二或第三索引值的元素<br>
+2.如果它不在第一索引值，那它一定不等於第一索引值的元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findDifferent</span>(<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">repeatNumber</span> <span style="color:#f92672">=</span>  <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">?</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">:</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">2</span>] ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">find</span>( <span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">repeatNumber</span> ) ;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findDifferent</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>])); <span style="color:#75715e">// 印出 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findDifferent</span>([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>])); <span style="color:#75715e">// 印出 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findDifferent</span>([<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>])); <span style="color:#75715e">// 印出 8
+</span></span></span></code></pre></div><h3 id="python-4">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-007">CANDY-007</h2>
+<p>題目：在某個數字陣列裡，可能藏有某個不合群的奇數或偶數，試著找出它！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findSomeDifferent</span>(<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findSomeDifferent</span>([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">2602</span>, <span style="color:#ae81ff">36</span>])); <span style="color:#75715e">// 印出 11
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findSomeDifferent</span>([<span style="color:#ae81ff">160</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1719</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">21</span>])); <span style="color:#75715e">// 印出 160
+</span></span></span></code></pre></div><h3 id="javascript-v-6">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>陣列裡不是奇數就是偶數，因此先用filters分類</li>
+<li>不合群的只有一個，因此陣列的不合群元素數量一定小於合群元素數量，用.length查</li>
+<li>用if判斷，印出兩個陣列相比，元素少的</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findSomeDifferent</span>(<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">odd</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">number</span> =&gt; <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">even</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">number</span> =&gt; <span style="color:#a6e22e">number</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">odd</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">even</span>.<span style="color:#a6e22e">length</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">odd</span>[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">even</span>[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findSomeDifferent</span>([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">2602</span>, <span style="color:#ae81ff">36</span>])); <span style="color:#75715e">// 印出 11
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findSomeDifferent</span>([<span style="color:#ae81ff">160</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1719</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">21</span>])); <span style="color:#75715e">// 印出 160
+</span></span></span></code></pre></div><h3 id="python-5">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-008">CANDY-008</h2>
+<p>題目：傳入一字串，計算得分最高的字
+英文字母 a 得 1 分、b 得 2 分、c 得 3 分，以此類推。
+所有傳入的字都是小寫。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#a6e22e">input</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#e6db74">&#34;lorem ipsum dolor sit amet&#34;</span>)); <span style="color:#75715e">// 印出 ipsum
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#e6db74">&#34;heyn i need a rubygem up to build this&#34;</span>)); <span style="color:#75715e">// 印出 rubygem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#e6db74">&#34;in time machine there are some bugs&#34;</span>)); <span style="color:#75715e">// 印出 there
+</span></span></span></code></pre></div><h3 id="javascript-v-7">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>傳入一字串，計算得分最高的字</li>
+<li>英文字母 a 得 1 分、b 得 2 分、c 得 3 分，以此類推。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#a6e22e">input</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">separatedText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">input</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34; &#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">separatedText</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">strin</span>) =&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strin</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">sum</span>, <span style="color:#66d9ef">char</span>) =&gt; <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> (<span style="color:#66d9ef">char</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">96</span>), <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">separatedText</span>[<span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">indexOf</span>(Math.<span style="color:#a6e22e">max</span>(...<span style="color:#a6e22e">scores</span>))];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#e6db74">&#34;lorem ipsum dolor sit amet&#34;</span>)); <span style="color:#75715e">// 印出 ipsum
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#e6db74">&#34;heyn i need a rubygem up to build this&#34;</span>)); <span style="color:#75715e">// 印出 rubygem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">highestScoreWord</span>(<span style="color:#e6db74">&#34;in time machine there are some bugs&#34;</span>));
+</span></span></code></pre></div><h3 id="python-6">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-009">CANDY-009</h2>
+<p>題目：移除網址中的錨點（Anchor）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">removeAnchor</span>(<span style="color:#a6e22e">url</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">removeAnchor</span>(<span style="color:#e6db74">&#34;5xcampus.com&#34;</span>)); <span style="color:#75715e">// 印出 5xcampus.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">removeAnchor</span>(<span style="color:#e6db74">&#34;5xcampus.com/#about&#34;</span>)); <span style="color:#75715e">// 印出 5xcampus.com/
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">removeAnchor</span>(<span style="color:#e6db74">&#34;5xcampus.com/courses/?page=1#about&#34;</span>)); <span style="color:#75715e">// 印出 5xcampus.com/courses/?page=1
+</span></span></span></code></pre></div><h3 id="javascript-v-8">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>使用.slice可以印出指定索引值之間的值</li>
+<li>用.indexOf找出錨點＃的索引值</li>
+<li>如果有＃，印出＃前的值</li>
+<li>如果沒有＃，印出整個值</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">removeAnchor</span>(<span style="color:#a6e22e">url</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">anchor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;#&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">anchor</span> <span style="color:#f92672">!==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">anchor</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">url</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">removeAnchor</span>(<span style="color:#e6db74">&#34;5xcampus.com&#34;</span>)); <span style="color:#75715e">// 印出 5xcampus.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">removeAnchor</span>(<span style="color:#e6db74">&#34;5xcampus.com/#about&#34;</span>)); <span style="color:#75715e">// 印出 5xcampus.com/
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">removeAnchor</span>(<span style="color:#e6db74">&#34;5xcampus.com/courses/?page=1#about&#34;</span>)); <span style="color:#75715e">// 
+</span></span></span></code></pre></div><h3 id="python-7">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-010">CANDY-010</h2>
+<p>題目：把數字以 10 進位展開式呈現，數字均為大於 0 的正整數
+範例：9527 變成 &ldquo;1000 x 9 + 100 x 5 + 10 x 2 + 7&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">expandedForm</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">8</span>)); <span style="color:#75715e">// 印出 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">25</span>)); <span style="color:#75715e">// 印出 10 x 2 + 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">148</span>)); <span style="color:#75715e">// 印出 100 x 1 + 10 x 4 + 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">1450</span>)); <span style="color:#75715e">// 印出 1000 x 1 + 100 x 4 + 10 x 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">60308</span>)); <span style="color:#75715e">// 印出 10000 x 6 + 100 x 3 + 8
+</span></span></span></code></pre></div><h3 id="javascript-v-9">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>先轉成字串並切開</li>
+<li>使用map做變化，不需要的變成“”</li>
+<li>用filter篩掉&quot;&quot;，再用join把值組合起來</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">expandedForm</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">num</span>.<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">numStr</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">digit</span>, <span style="color:#a6e22e">index</span>) =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tenN</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">**</span> (<span style="color:#a6e22e">numStr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">digit</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">?</span> <span style="color:#a6e22e">tenN</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">digit</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tenN</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> x </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">digit</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34; + &#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">8</span>)); <span style="color:#75715e">// 印出 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">25</span>)); <span style="color:#75715e">// 印出 10 x 2 + 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">148</span>)); <span style="color:#75715e">// 印出 100 x 1 + 10 x 4 + 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">1450</span>)); <span style="color:#75715e">// 印出 1000 x 1 + 100 x 4 + 10 x 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">expandedForm</span>(<span style="color:#ae81ff">60308</span>)); <span style="color:#75715e">// 印出 10000 x 6 + 100 x 3 + 8
+</span></span></span></code></pre></div><h3 id="python-8">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-011">CANDY-011</h2>
+<p>題目：找出一個數字陣列裡，出現奇數次數的數字
+範例：[1, 1, 0]，<code>0</code> 只有出現 1 次
+[5, 5, 8, 8, 8, 4, 4]，<code>8</code> 出現了 3  次</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findOddElm</span>(<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>])); <span style="color:#75715e">// 印出 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>])); <span style="color:#75715e">// 印出 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>])); <span style="color:#75715e">// 印出 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>])); <span style="color:#75715e">// 印出 -1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>])); <span style="color:#75715e">// 印出 5
+</span></span></span></code></pre></div><h3 id="javascript-v-10">JavaScript V</h3>
+<p>解題思路：
+發現了神奇的＾運算法
+a ^ b = a ^ b
+a ^ a = 0
+0 ^ b = b
+相同的值異或會為0
+因此將所有的值異或後，會留下出現次數為奇數的值
+藉由reduce的特性從而能讓所有值異或，留下出現次數為奇數的值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findOddElm</span>(<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">^</span> <span style="color:#a6e22e">b</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>])); <span style="color:#75715e">// 印出 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>])); <span style="color:#75715e">// 印出 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>])); <span style="color:#75715e">// 印出 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>])); <span style="color:#75715e">// 印出 -1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findOddElm</span>([<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>])); <span style="color:#75715e">// 印出 5
+</span></span></span></code></pre></div><h3 id="python-9">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-012">CANDY-012</h2>
+<p>題目：把數字加總，最終濃縮成個位數
+範例：9527 =&gt; 9 + 5 + 2 + 7 =&gt; 23 =&gt; 2 + 3 =&gt; 5
+1450 =&gt; 1 + 4 + 5 + 0 =&gt; 10 =&gt; 1 + 0 =&gt; 1</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numberReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">num</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">9527</span>)); <span style="color:#75715e">// 印出 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">1450</span>)); <span style="color:#75715e">// 印出 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">5566108</span>)); <span style="color:#75715e">// 印出 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">1234567890</span>)); <span style="color:#75715e">// 印出 9
+</span></span></span></code></pre></div><h3 id="javascript-v-11">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>將數字轉為字串後用.split分開成為陣列</li>
+<li>用.reduce加總，得到加總值</li>
+<li>重複上面兩個步驟，直到加總值為個位數。因為不確定圈數，使用while迴圈</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numberReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">num</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">num</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">num</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">arr</span>, <span style="color:#a6e22e">cv</span>) =&gt; Number(<span style="color:#a6e22e">arr</span>) <span style="color:#f92672">+</span> Number(<span style="color:#a6e22e">cv</span>));
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">num</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">9527</span>)); <span style="color:#75715e">// 印出 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">1450</span>)); <span style="color:#75715e">// 印出 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">5566108</span>)); <span style="color:#75715e">// 印出 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numberReducer</span>(<span style="color:#ae81ff">1234567890</span>)); <span style="color:#75715e">// 印出 9
+</span></span></span></code></pre></div><h3 id="python-10">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-013">CANDY-013</h2>
+<p>題目：根據台灣財政部所提供的公司統編驗證規則，計算統一編號是否正確
+<a href="https://www.fia.gov.tw/singlehtml/3?cntId=c4d9cff38c8642ef8872774ee9987283">https://www.fia.gov.tw/singlehtml/3?cntId=c4d9cff38c8642ef8872774ee9987283</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isValidVatNumber</span>(<span style="color:#a6e22e">vat</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isValidVatNumber</span>(<span style="color:#e6db74">&#34;10458575&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isValidVatNumber</span>(<span style="color:#e6db74">&#34;88117125&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isValidVatNumber</span>(<span style="color:#e6db74">&#34;53212539&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isValidVatNumber</span>(<span style="color:#e6db74">&#34;88117126&#34;</span>)); <span style="color:#75715e">// false
+</span></span></span></code></pre></div><h3 id="javascript">JavaScript</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"></code></pre></div><h3 id="python-11">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-014">CANDY-014</h2>
+<p>題目：把鄰近的重複值去除，但仍照原本的順序排序<br>
+範例：&ldquo;AAABBBDDDAABBBCC&rdquo; -&gt; [&lsquo;A&rsquo;, &lsquo;B&rsquo;, &lsquo;D&rsquo;, &lsquo;A&rsquo;, &lsquo;B&rsquo;, &lsquo;C&rsquo;]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uniqueOrder</span>(<span style="color:#a6e22e">sequence</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>(<span style="color:#e6db74">&#34;AABCC&#34;</span>)); <span style="color:#75715e">// [ &#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>(<span style="color:#e6db74">&#34;AAABBBCCBCC&#34;</span>)); <span style="color:#75715e">// [ &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;B&#39;, &#39;C&#39;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>])); <span style="color:#75715e">// [ 1, 2, 1, 2, 1 ]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>])); <span style="color:#75715e">// [1, 2, 1]
+</span></span></span></code></pre></div><h3 id="javascript-v-12">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>使用filter來篩選，後面的值若與前面的值一樣時則捨去</li>
+<li>當引數不是陣列時，需要先將值切開，使用typeof檢查，如果是字串則下用split切開成陣列</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uniqueOrder</span>(<span style="color:#a6e22e">sequence</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">sequence</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;string&#34;</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sequence</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sequence</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sequence</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">index</span>) =&gt; <span style="color:#a6e22e">value</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">sequence</span>[<span style="color:#a6e22e">index</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>])); <span style="color:#75715e">// [ 1, 2, 1, 2, 1 ]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>])); <span style="color:#75715e">// [1, 2, 1]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>(<span style="color:#e6db74">&#34;AABCC&#34;</span>)); <span style="color:#75715e">// [ &#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">uniqueOrder</span>(<span style="color:#e6db74">&#34;AAABBBCCBCC&#34;</span>)); <span style="color:#75715e">// [ &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;B&#39;, &#39;C&#39;]
+</span></span></span></code></pre></div><h3 id="python-12">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-015">CANDY-015</h2>
+<p>題目：把原本的字串拆解成 2 個字元一組，若不足 2 個字則補上底線<br>
+範例：<br>
+&ldquo;abcdef&rdquo; -&gt; [&lsquo;ab&rsquo;, &lsquo;cd&rsquo;, &rsquo;ef&rsquo;]<br>
+&ldquo;abcdefg&rdquo; -&gt; [&lsquo;ab&rsquo;, &lsquo;cd&rsquo;, &rsquo;ef&rsquo;, &lsquo;g_&rsquo;]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">splitString</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">splitString</span>(<span style="color:#e6db74">&#34;abcdef&#34;</span>)); <span style="color:#75715e">// [&#34;ab&#34;, &#34;cd&#34;, &#34;ef&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">splitString</span>(<span style="color:#e6db74">&#34;abcdefg&#34;</span>)); <span style="color:#75715e">// [&#34;ab&#34;, &#34;cd&#34;, &#34;ef&#34;, &#34;g_&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">splitString</span>(<span style="color:#e6db74">&#34;&#34;</span>)); <span style="color:#75715e">// []
+</span></span></span></code></pre></div><h3 id="javascript-v-13">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>先判斷長度是否為偶數，如果不是則在最後加&quot;&quot;</li>
+<li>設定迴圈，用.slice切開字串，因為需要有東西裝保出來的結果，所以準備一個空陣列放入結果，最後再回傳陣列</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">splitString</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">&#34;_&#34;</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">str</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">strIndex</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">strIndex</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">splitString</span>(<span style="color:#e6db74">&#34;abcdef&#34;</span>)); <span style="color:#75715e">// [&#34;ab&#34;, &#34;cd&#34;, &#34;ef&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">splitString</span>(<span style="color:#e6db74">&#34;abcdefg&#34;</span>)); <span style="color:#75715e">// [&#34;ab&#34;, &#34;cd&#34;, &#34;ef&#34;, &#34;g_&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">splitString</span>(<span style="color:#e6db74">&#34;&#34;</span>)); <span style="color:#75715e">// []
+</span></span></span></code></pre></div><h3 id="python-13">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-016">CANDY-016</h2>
+<p>題目：把原本 snake_case 的字轉換成 camelCase 格式<br>
+範例：&ldquo;hello_world&rdquo; -&gt; &ldquo;helloWorld&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toCamelCase</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">toCamelCase</span>(<span style="color:#e6db74">&#34;book&#34;</span>)); <span style="color:#75715e">// book
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">toCamelCase</span>(<span style="color:#e6db74">&#34;book_store&#34;</span>)); <span style="color:#75715e">// bookStore
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">toCamelCase</span>(<span style="color:#e6db74">&#34;get_good_score&#34;</span>)); <span style="color:#75715e">// getGoodScore
+</span></span></span></code></pre></div><h3 id="javascript-v-14">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>利用把字切開</li>
+<li>使用迴圈讓索引值為1之後的首個字做大寫轉換，並把後面的小寫字加回來</li>
+<li>使用join把陣列中的值轉為字串</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">toCamelCase</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">words</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;_&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">words</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">toUpperCase</span>()<span style="color:#f92672">+</span> <span style="color:#a6e22e">words</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">words</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">toCamelCase</span>(<span style="color:#e6db74">&#34;book&#34;</span>)); <span style="color:#75715e">// book
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">toCamelCase</span>(<span style="color:#e6db74">&#34;book_store&#34;</span>)); <span style="color:#75715e">// bookStore
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">toCamelCase</span>(<span style="color:#e6db74">&#34;get_good_score&#34;</span>)); <span style="color:#75715e">// getGoodScore
+</span></span></span></code></pre></div><h3 id="python-14">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-017">CANDY-017</h2>
+<p>題目：計算數字的 2 進位裡有幾個 1<br>
+範例：5 -&gt; 101 -&gt; 2 個 1</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">countBits</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">countBits</span>(<span style="color:#ae81ff">1234</span>)); <span style="color:#75715e">// 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">countBits</span>(<span style="color:#ae81ff">1450</span>)); <span style="color:#75715e">// 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">countBits</span>(<span style="color:#ae81ff">9527</span>)); <span style="color:#75715e">// 8
+</span></span></span></code></pre></div><h3 id="javascript-v-15">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>轉成二進位：使用 number.string (2)</li>
+<li>讓所有的  &ldquo;1&rdquo;  加總起來，因此用.split將值拆開成陣列，在用.reduce加總</li>
+<li>因為.split出來為字串，.reduce加總需要數字，因此加判斷式如果值為 &ldquo;1&rdquo; 則傳出數字 1</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">countBits</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bits</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">num</span>.<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">2</span>).<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bits</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cv</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">cv</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">countBits</span>(<span style="color:#ae81ff">1234</span>)); <span style="color:#75715e">// 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">countBits</span>(<span style="color:#ae81ff">1450</span>)); <span style="color:#75715e">// 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">countBits</span>(<span style="color:#ae81ff">9527</span>)); <span style="color:#75715e">// 8
+</span></span></span></code></pre></div><h3 id="python-15">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-018">CANDY-018</h2>
+<p>題目：實作一個可以印出隨機整數的函數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">randomNumber</span>(<span style="color:#ae81ff">50</span>)); <span style="color:#75715e">// 隨機印出 0 ~ 49 之間的任何一個數字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">randomNumber</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">30</span>)); <span style="color:#75715e">// 隨機印出 5 ~ 29 之間的任何一個數字
+</span></span></span></code></pre></div><h3 id="javascript-v-16">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>在js中，若引數少於參數，會出現undefined，因此設定如果只有一個引數時，min =0, max = 原本的引數</li>
+<li>用Math.random 曲隨機數字，Math.floor取整數</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomNumber</span>(<span style="color:#a6e22e">min</span>, <span style="color:#a6e22e">max</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">max</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">max</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">max</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">min</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">min</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">randomNumber</span>(<span style="color:#ae81ff">50</span>)); <span style="color:#75715e">// 隨機印出 0 ~ 49 之間的任何一個數字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">randomNumber</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">30</span>)); <span style="color:#75715e">// 隨機印出 5 ~ 29 之間的任何一個數字
+</span></span></span></code></pre></div><h3 id="python-16">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-019">CANDY-019</h2>
+<p>題目：檢查是否為某個數字的平方數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isSquare</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">5</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">100</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// false
+</span></span></span></code></pre></div><h3 id="javascript-v-17">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>反推平方會使用開更號，使用Math.sqrt可以得到變數開更號後的值</li>
+<li>若得到的值為整數，即為某數字的平方數，使用Number.isInteger剛好判斷ture/false</li>
+<li>平方出來的數字不會為負數，因此在最前面先加條件篩選掉</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isSquare</span>(<span style="color:#a6e22e">num</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">num</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Number.<span style="color:#a6e22e">isInteger</span>(Math.<span style="color:#a6e22e">sqrt</span>(<span style="color:#a6e22e">num</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">5</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#ae81ff">100</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">isSquare</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// false
+</span></span></span></code></pre></div><h3 id="python-17">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-020">CANDY-020</h2>
+<p>題目：檢查字串的 x 跟 o 的數量是不是一樣多，不分大小寫</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">xxoo</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;ooxx&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xxoo&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xxooo&#34;</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xoox&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;ooAA&#34;</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xoXoA&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span></code></pre></div><h3 id="javascript-v-18">JavaScript V</h3>
+<p>解題思路：</p>
+<ol>
+<li>不分大小寫，所以先統一格式，用.toUpperCase()轉成大寫</li>
+<li>用.filter，分別篩出X,O並計算數量</li>
+<li>結果需回傳布林值，因此設定兩個變數的數量相等</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">xxoo</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">upperStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">toUpperCase</span>().<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">xCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">upperStr</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">index</span>) =&gt; <span style="color:#a6e22e">index</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;X&#34;</span>).<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">oCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">upperStr</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">index</span>) =&gt; <span style="color:#a6e22e">index</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;O&#34;</span>).<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">xCount</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">oCount</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;ooxx&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xxoo&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xxooo&#34;</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xoox&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;ooAA&#34;</span>)); <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xxoo</span>(<span style="color:#e6db74">&#34;xoXoA&#34;</span>)); <span style="color:#75715e">// true
+</span></span></span></code></pre></div><h3 id="python-18">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-021">CANDY-021</h2>
+<p>題目：實作 Stack 資料結構</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Stack</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Stack</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">123</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">456</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">push</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 印出 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">pop</span>(); <span style="color:#75715e">// 取出元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">item</span>); <span style="color:#75715e">// 印出 456
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">pop</span>(); <span style="color:#75715e">// 繼續取出元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">stack</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 印出 0
+</span></span></span></code></pre></div><h3 id="javascript-1">JavaScript</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"></code></pre></div><h3 id="python-19">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-022">CANDY-022</h2>
+<p>題目：實作 Queue 資料結構</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Queue</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Queue</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">enqueue</span>(<span style="color:#ae81ff">123</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">enqueue</span>(<span style="color:#ae81ff">456</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">enqueue</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">length</span>); <span style="color:#75715e">// 印出 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">dequeue</span>(); <span style="color:#75715e">// 取出元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">item</span>); <span style="color:#75715e">// 印出 123
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">dequeue</span>(); <span style="color:#75715e">// 繼續取出元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">length</span>); <span style="color:#75715e">// 印出 0
+</span></span></span></code></pre></div><h3 id="javascript-2">JavaScript</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"></code></pre></div><h3 id="python-20">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-023">CANDY-023</h2>
+<p>題目：算出 N 個數字的最大公因數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calcGCD</span>(...<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作程式碼寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcGCD</span>(<span style="color:#ae81ff">10</span>)); <span style="color:#75715e">// 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcGCD</span>(<span style="color:#ae81ff">103</span>, <span style="color:#ae81ff">27</span>)); <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcGCD</span>(<span style="color:#ae81ff">21</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">18</span>)); <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcGCD</span>(<span style="color:#ae81ff">104</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">36</span>, <span style="color:#ae81ff">88</span>)); <span style="color:#75715e">// 4
+</span></span></span></code></pre></div><h3 id="javascript-3">JavaScript</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"></code></pre></div><h3 id="python-21">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-024">CANDY-024</h2>
+<p>題目：算出 N 個數字的最小公倍數
+提示：可使用 023 計算最大公因數的函數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calcLCM</span>(...<span style="color:#a6e22e">numbers</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作程式碼寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcLCM</span>(<span style="color:#ae81ff">10</span>)); <span style="color:#75715e">// 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcLCM</span>(<span style="color:#ae81ff">103</span>, <span style="color:#ae81ff">27</span>)); <span style="color:#75715e">// 2781
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcLCM</span>(<span style="color:#ae81ff">21</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">18</span>)); <span style="color:#75715e">// 630
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">calcLCM</span>(<span style="color:#ae81ff">104</span>, <span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">36</span>, <span style="color:#ae81ff">88</span>)); <span style="color:#75715e">// 41184
+</span></span></span></code></pre></div><h3 id="javascript-4">JavaScript</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"></code></pre></div><h3 id="python-22">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div><hr>
+<h2 id="candy-025">CANDY-025</h2>
+<p>題目：
+一般我們常見的四捨五入計算方式在統計上容易造成計算偏差
+於是有人推出了「銀行家捨入法」用來稍微平衡計算偏差
+計算方式是「四捨六入五成雙」
+當捨入計算位數剛好是 5 的時候，會算出離這個數字比較近的偶數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JS" data-lang="JS"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bankersRounding</span>(<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">digits</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 實作程式碼寫在這裡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bankersRounding</span>(<span style="color:#ae81ff">0.4</span>)); <span style="color:#75715e">// 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bankersRounding</span>(<span style="color:#ae81ff">0.6</span>)); <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bankersRounding</span>(<span style="color:#ae81ff">0.5</span>)); <span style="color:#75715e">// 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bankersRounding</span>(<span style="color:#ae81ff">1.5</span>)); <span style="color:#75715e">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bankersRounding</span>(<span style="color:#ae81ff">1.24</span>, <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// 1.2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bankersRounding</span>(<span style="color:#ae81ff">1.26</span>, <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// 1.3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bankersRounding</span>(<span style="color:#ae81ff">1.25</span>, <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// 1.2
+</span></span></span></code></pre></div><h3 id="javascript-5">JavaScript</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"></code></pre></div><h3 id="python-23">Python</h3>
+<p>解題思路：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"></code></pre></div>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a class="group btn btn-outline" href="/posts/interview-urfit/" title="面試-適才科技">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+            <span class="max-w-48 truncate">面試-適才科技</span>
+          </div>
+        </a>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/18th-googlemap/" title="Google Map ">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+            <span class="max-w-48 truncate">Google Map </span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+    </article>
+  </div>
+
+  
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">About Me</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hello I&rsquo;m Joanna, this is my blog</p>
+<p>我會在這邊分享我學習程式語言的心得與筆記</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

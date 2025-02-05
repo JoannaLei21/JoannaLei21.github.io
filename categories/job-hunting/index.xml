@@ -6,8 +6,15 @@
     <description>Recent content in Job Hunting on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/job-hunting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面試-適才科技</title>
+      <link>/posts/interview-urfit/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/interview-urfit/</guid>
+      <description>&lt;h2 id=&#34;面試-適才科技&#34;&gt;面試-適才科技&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>Google Map </title>
       <link>/posts/18th-googlemap/</link>
@@ -30,7 +37,7 @@
       <description>&lt;p&gt;專案 README.md&lt;/p&gt;</description>
     </item>
     <item>
-      <title>轉職履歷</title>
+      <title>轉職履歷講座</title>
       <link>/posts/resume/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
       <guid>/posts/resume/</guid>

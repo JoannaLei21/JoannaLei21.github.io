@@ -2,34 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/18th-googlemap/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/javascript/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/interview/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/job/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/job-hunting/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/interview-urfit/</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/learning-code/</loc>
+    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/candy/</loc>
+    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/18th-googlemap/</loc>
     <lastmod>2024-12-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/my-coding-life/</loc>
     <lastmod>2024-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/project/</loc>
-    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2024-12-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/18th-linepayapi/</loc>
@@ -38,22 +53,19 @@
     <loc>/posts/18th-readme/</loc>
     <lastmod>2024-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/job/</loc>
-    <lastmod>2024-12-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/posts/resume/</loc>
     <lastmod>2024-12-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/basic-knowledge/</loc>
-    <lastmod>2024-11-21T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/git/</loc>
+    <lastmod>2024-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/bk-noun/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/bk-terminal/</loc>
-    <lastmod>2024-11-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/python/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/py-django/</loc>
@@ -75,9 +87,6 @@
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/html-setting/</loc>
-    <lastmod>2024-11-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/interview/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/js-closure/</loc>
@@ -106,23 +115,5 @@
   </url><url>
     <loc>/posts/resource/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/18th-day12/</loc>
-    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/18th-day11/</loc>
-    <lastmod>2023-12-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/18th-day8/</loc>
-    <lastmod>2023-12-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/18th-day7/</loc>
-    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/18th-day6/</loc>
-    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/18th-day5/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url>
 </urlset>
