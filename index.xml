@@ -2,185 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Joanna&#39;s Blog</title>
-    <link>//localhost:1313/</link>
+    <link>/</link>
     <description>Recent content on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>UrFit-Day 01</title>
-      <link>//localhost:1313/posts/urfit-day-01/</link>
+      <title>Urfit Day 02</title>
+      <link>/posts/urfit-day-02/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-day-02/</guid>
+      <description>&lt;p&gt;Noob in Coding 新人日誌&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UrFit Day 01</title>
+      <link>/posts/urfit-day-01/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-01/</guid>
+      <guid>/posts/urfit-day-01/</guid>
       <description>&lt;h2 id=&#34;noob-in-coding-新人日誌&#34;&gt;Noob in Coding 新人日誌&lt;/h2&gt;</description>
     </item>
     <item>
       <title>apple watch App</title>
-      <link>//localhost:1313/posts/apple-watch-app/</link>
+      <link>/posts/apple-watch-app/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/apple-watch-app/</guid>
+      <guid>/posts/apple-watch-app/</guid>
       <description>&lt;h2 id=&#34;side-project-製作一個apple-watch-app&#34;&gt;Side Project: 製作一個apple Watch App&lt;/h2&gt;</description>
     </item>
     <item>
       <title>面試-適才科技</title>
-      <link>//localhost:1313/posts/interview-urfit/</link>
+      <link>/posts/interview-urfit/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-urfit/</guid>
+      <guid>/posts/interview-urfit/</guid>
       <description>&lt;h2 id=&#34;面試-適才科技&#34;&gt;面試-適才科技&lt;/h2&gt;</description>
     </item>
     <item>
       <title>糖果題</title>
-      <link>//localhost:1313/posts/candy/</link>
+      <link>/posts/candy/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/candy/</guid>
+      <guid>/posts/candy/</guid>
       <description>&lt;h1 id=&#34;龍哥的糖果題&#34;&gt;龍哥的糖果題&lt;/h1&gt;</description>
     </item>
     <item>
       <title>Google Map </title>
-      <link>//localhost:1313/posts/18th-googlemap/</link>
+      <link>/posts/18th-googlemap/</link>
       <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/18th-googlemap/</guid>
+      <guid>/posts/18th-googlemap/</guid>
       <description>&lt;p&gt;串接Google Map 顯示聚會地點&lt;/p&gt;</description>
     </item>
     <item>
       <title>Line Pay Api串接</title>
-      <link>//localhost:1313/posts/18th-linepayapi/</link>
+      <link>/posts/18th-linepayapi/</link>
       <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/18th-linepayapi/</guid>
+      <guid>/posts/18th-linepayapi/</guid>
       <description>&lt;p&gt;使用 Django 串接 Line Pay&lt;/p&gt;</description>
     </item>
     <item>
       <title>Moordule-README</title>
-      <link>//localhost:1313/posts/18th-readme/</link>
+      <link>/posts/18th-readme/</link>
       <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/18th-readme/</guid>
+      <guid>/posts/18th-readme/</guid>
       <description>&lt;p&gt;專案 README.md&lt;/p&gt;</description>
     </item>
     <item>
       <title>轉職履歷講座</title>
-      <link>//localhost:1313/posts/resume/</link>
+      <link>/posts/resume/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/resume/</guid>
+      <guid>/posts/resume/</guid>
       <description>&lt;p&gt;履歷講座&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git</title>
-      <link>//localhost:1313/posts/git/</link>
+      <link>/posts/git/</link>
       <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/git/</guid>
+      <guid>/posts/git/</guid>
       <description>&lt;p&gt;用 Git 管理檔案&lt;/p&gt;</description>
     </item>
     <item>
       <title>Basic knowledge- Noun</title>
-      <link>//localhost:1313/posts/bk-noun/</link>
+      <link>/posts/bk-noun/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/bk-noun/</guid>
+      <guid>/posts/bk-noun/</guid>
       <description>&lt;h2 id=&#34;基本名詞-持續更新&#34;&gt;基本名詞-持續更新&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Basic knowledge- Terminal</title>
-      <link>//localhost:1313/posts/bk-terminal/</link>
+      <link>/posts/bk-terminal/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/bk-terminal/</guid>
+      <guid>/posts/bk-terminal/</guid>
       <description>&lt;h2 id=&#34;終端機指令集合區-&#34;&gt;終端機指令集合區 🥷&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-Django</title>
-      <link>//localhost:1313/posts/py-django/</link>
+      <link>/posts/py-django/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-django/</guid>
+      <guid>/posts/py-django/</guid>
       <description>&lt;p&gt;使用 Django 框架建立網站&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python-Function</title>
-      <link>//localhost:1313/posts/py-function/</link>
+      <link>/posts/py-function/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-function/</guid>
+      <guid>/posts/py-function/</guid>
       <description>&lt;h2 id=&#34;在-python-裡的函數-待補充&#34;&gt;在 Python 裡的函數-待補充&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-LEGB</title>
-      <link>//localhost:1313/posts/py--legb/</link>
+      <link>/posts/py--legb/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py--legb/</guid>
+      <guid>/posts/py--legb/</guid>
       <description>&lt;h2 id=&#34;function-的作用域&#34;&gt;Function 的作用域&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-Set</title>
-      <link>//localhost:1313/posts/py-set/</link>
+      <link>/posts/py-set/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-set/</guid>
+      <guid>/posts/py-set/</guid>
       <description>&lt;h2 id=&#34;set-集合&#34;&gt;Set 集合&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-Tuple</title>
-      <link>//localhost:1313/posts/py-tuple/</link>
+      <link>/posts/py-tuple/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-tuple/</guid>
+      <guid>/posts/py-tuple/</guid>
       <description>&lt;h2 id=&#34;什麼是tuple&#34;&gt;什麼是&lt;strong&gt;Tuple&lt;/strong&gt;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>HTML-文件設定</title>
-      <link>//localhost:1313/posts/html-setting/</link>
+      <link>/posts/html-setting/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/html-setting/</guid>
+      <guid>/posts/html-setting/</guid>
       <description>&lt;p&gt;解析 HTML 開頭的那些咒語們&lt;/p&gt;</description>
     </item>
     <item>
       <title>JavaScript-Closuer</title>
-      <link>//localhost:1313/posts/js-closure/</link>
+      <link>/posts/js-closure/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/js-closure/</guid>
+      <guid>/posts/js-closure/</guid>
       <description>&lt;p&gt;關於 Closure 閉包與自由變數&lt;/p&gt;</description>
     </item>
     <item>
       <title>JavaScript-Variable</title>
-      <link>//localhost:1313/posts/js-variable-hosting/</link>
+      <link>/posts/js-variable-hosting/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/js-variable-hosting/</guid>
+      <guid>/posts/js-variable-hosting/</guid>
       <description>&lt;p&gt;令人混亂的提升-待撰寫&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python-裝飾器Decorator</title>
-      <link>//localhost:1313/posts/py-decorator/</link>
+      <link>/posts/py-decorator/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-decorator/</guid>
+      <guid>/posts/py-decorator/</guid>
       <description>&lt;p&gt;Decorator-待撰寫&lt;/p&gt;</description>
     </item>
     <item>
       <title>面試題合集</title>
-      <link>//localhost:1313/posts/interview-q/</link>
+      <link>/posts/interview-q/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-q/</guid>
+      <guid>/posts/interview-q/</guid>
       <description>&lt;p&gt;關於上課提到的面試題目們-持續更新中&lt;/p&gt;</description>
     </item>
     <item>
       <title>Start!</title>
-      <link>//localhost:1313/posts/hugo-buildup-webpage/</link>
+      <link>/posts/hugo-buildup-webpage/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/hugo-buildup-webpage/</guid>
+      <guid>/posts/hugo-buildup-webpage/</guid>
       <description>&lt;p&gt;開始建立我的 Hugo Web page-待補充&lt;/p&gt;</description>
     </item>
     <item>
       <title>選擇ASTRO Camp的原因</title>
-      <link>//localhost:1313/posts/astro-capm/</link>
+      <link>/posts/astro-capm/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/astro-capm/</guid>
+      <guid>/posts/astro-capm/</guid>
       <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
     </item>
     <item>
       <title>JavaScripts-Flow Control</title>
-      <link>//localhost:1313/posts/js-flowcontrol/</link>
+      <link>/posts/js-flowcontrol/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/js-flowcontrol/</guid>
+      <guid>/posts/js-flowcontrol/</guid>
       <description>&lt;h2 id=&#34;流程控制-flow-control&#34;&gt;流程控制 Flow Control&lt;/h2&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Resource</title>
-      <link>//localhost:1313/posts/resource/</link>
+      <link>/posts/resource/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/resource/</guid>
+      <guid>/posts/resource/</guid>
       <description>&lt;h2 id=&#34;上課介紹的資源連結&#34;&gt;上課介紹的資源連結&lt;/h2&gt;</description>
     </item>
   </channel>

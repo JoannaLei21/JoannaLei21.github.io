@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Job Hunting on Joanna&#39;s Blog</title>
-    <link>//localhost:1313/categories/job-hunting/</link>
+    <link>/categories/job-hunting/</link>
     <description>Recent content in Job Hunting on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/job-hunting/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/job-hunting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>面試-適才科技</title>
-      <link>//localhost:1313/posts/interview-urfit/</link>
+      <link>/posts/interview-urfit/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-urfit/</guid>
+      <guid>/posts/interview-urfit/</guid>
       <description>&lt;h2 id=&#34;面試-適才科技&#34;&gt;面試-適才科技&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Google Map </title>
-      <link>//localhost:1313/posts/18th-googlemap/</link>
+      <link>/posts/18th-googlemap/</link>
       <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/18th-googlemap/</guid>
+      <guid>/posts/18th-googlemap/</guid>
       <description>&lt;p&gt;串接Google Map 顯示聚會地點&lt;/p&gt;</description>
     </item>
     <item>
       <title>Line Pay Api串接</title>
-      <link>//localhost:1313/posts/18th-linepayapi/</link>
+      <link>/posts/18th-linepayapi/</link>
       <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/18th-linepayapi/</guid>
+      <guid>/posts/18th-linepayapi/</guid>
       <description>&lt;p&gt;使用 Django 串接 Line Pay&lt;/p&gt;</description>
     </item>
     <item>
       <title>Moordule-README</title>
-      <link>//localhost:1313/posts/18th-readme/</link>
+      <link>/posts/18th-readme/</link>
       <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/18th-readme/</guid>
+      <guid>/posts/18th-readme/</guid>
       <description>&lt;p&gt;專案 README.md&lt;/p&gt;</description>
     </item>
     <item>
       <title>轉職履歷講座</title>
-      <link>//localhost:1313/posts/resume/</link>
+      <link>/posts/resume/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/resume/</guid>
+      <guid>/posts/resume/</guid>
       <description>&lt;p&gt;履歷講座&lt;/p&gt;</description>
     </item>
     <item>
       <title>HTML-文件設定</title>
-      <link>//localhost:1313/posts/html-setting/</link>
+      <link>/posts/html-setting/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/html-setting/</guid>
+      <guid>/posts/html-setting/</guid>
       <description>&lt;p&gt;解析 HTML 開頭的那些咒語們&lt;/p&gt;</description>
     </item>
     <item>
       <title>JavaScript-Variable</title>
-      <link>//localhost:1313/posts/js-variable-hosting/</link>
+      <link>/posts/js-variable-hosting/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/js-variable-hosting/</guid>
+      <guid>/posts/js-variable-hosting/</guid>
       <description>&lt;p&gt;令人混亂的提升-待撰寫&lt;/p&gt;</description>
     </item>
     <item>
       <title>面試題合集</title>
-      <link>//localhost:1313/posts/interview-q/</link>
+      <link>/posts/interview-q/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-q/</guid>
+      <guid>/posts/interview-q/</guid>
       <description>&lt;p&gt;關於上課提到的面試題目們-持續更新中&lt;/p&gt;</description>
     </item>
   </channel>

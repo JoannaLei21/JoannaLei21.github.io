@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTML on Joanna&#39;s Blog</title>
-    <link>//localhost:1313/tags/html/</link>
+    <link>/tags/html/</link>
     <description>Recent content in HTML on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 18 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML-文件設定</title>
-      <link>//localhost:1313/posts/html-setting/</link>
+      <link>/posts/html-setting/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/html-setting/</guid>
+      <guid>/posts/html-setting/</guid>
       <description>&lt;p&gt;解析 HTML 開頭的那些咒語們&lt;/p&gt;</description>
     </item>
     <item>
       <title>Start!</title>
-      <link>//localhost:1313/posts/hugo-buildup-webpage/</link>
+      <link>/posts/hugo-buildup-webpage/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/hugo-buildup-webpage/</guid>
+      <guid>/posts/hugo-buildup-webpage/</guid>
       <description>&lt;p&gt;開始建立我的 Hugo Web page-待補充&lt;/p&gt;</description>
     </item>
     <item>
       <title>選擇ASTRO Camp的原因</title>
-      <link>//localhost:1313/posts/astro-capm/</link>
+      <link>/posts/astro-capm/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/astro-capm/</guid>
+      <guid>/posts/astro-capm/</guid>
       <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
     </item>
   </channel>

@@ -2,38 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Job on Joanna&#39;s Blog</title>
-    <link>//localhost:1313/tags/job/</link>
+    <link>/tags/job/</link>
     <description>Recent content in Job on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/job/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/job/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>UrFit-Day 01</title>
-      <link>//localhost:1313/posts/urfit-day-01/</link>
+      <title>Urfit Day 02</title>
+      <link>/posts/urfit-day-02/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-day-02/</guid>
+      <description>&lt;p&gt;Noob in Coding 新人日誌&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UrFit Day 01</title>
+      <link>/posts/urfit-day-01/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-01/</guid>
-      <description>&lt;h2 id=&#34;day-01-新人日誌&#34;&gt;Day 01 新人日誌&lt;/h2&gt;</description>
+      <guid>/posts/urfit-day-01/</guid>
+      <description>&lt;h2 id=&#34;noob-in-coding-新人日誌&#34;&gt;Noob in Coding 新人日誌&lt;/h2&gt;</description>
     </item>
     <item>
       <title>面試-適才科技</title>
-      <link>//localhost:1313/posts/interview-urfit/</link>
+      <link>/posts/interview-urfit/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-urfit/</guid>
+      <guid>/posts/interview-urfit/</guid>
       <description>&lt;h2 id=&#34;面試-適才科技&#34;&gt;面試-適才科技&lt;/h2&gt;</description>
     </item>
     <item>
       <title>轉職履歷講座</title>
-      <link>//localhost:1313/posts/resume/</link>
+      <link>/posts/resume/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/resume/</guid>
+      <guid>/posts/resume/</guid>
       <description>&lt;p&gt;履歷講座&lt;/p&gt;</description>
     </item>
     <item>
       <title>面試題合集</title>
-      <link>//localhost:1313/posts/interview-q/</link>
+      <link>/posts/interview-q/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-q/</guid>
+      <guid>/posts/interview-q/</guid>
       <description>&lt;p&gt;關於上課提到的面試題目們-持續更新中&lt;/p&gt;</description>
     </item>
   </channel>

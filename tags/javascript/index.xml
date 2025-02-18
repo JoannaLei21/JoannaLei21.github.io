@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on Joanna&#39;s Blog</title>
-    <link>//localhost:1313/tags/javascript/</link>
+    <link>/tags/javascript/</link>
     <description>Recent content in JavaScript on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>糖果題</title>
-      <link>//localhost:1313/posts/candy/</link>
+      <link>/posts/candy/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/candy/</guid>
+      <guid>/posts/candy/</guid>
       <description>&lt;h1 id=&#34;龍哥的糖果題&#34;&gt;龍哥的糖果題&lt;/h1&gt;</description>
     </item>
     <item>
       <title>Google Map </title>
-      <link>//localhost:1313/posts/18th-googlemap/</link>
+      <link>/posts/18th-googlemap/</link>
       <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/18th-googlemap/</guid>
+      <guid>/posts/18th-googlemap/</guid>
       <description>&lt;p&gt;串接Google Map 顯示聚會地點&lt;/p&gt;</description>
     </item>
     <item>
       <title>JavaScript-Closuer</title>
-      <link>//localhost:1313/posts/js-closure/</link>
+      <link>/posts/js-closure/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/js-closure/</guid>
+      <guid>/posts/js-closure/</guid>
       <description>&lt;p&gt;關於 Closure 閉包與自由變數&lt;/p&gt;</description>
     </item>
     <item>
       <title>JavaScript-Variable</title>
-      <link>//localhost:1313/posts/js-variable-hosting/</link>
+      <link>/posts/js-variable-hosting/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/js-variable-hosting/</guid>
+      <guid>/posts/js-variable-hosting/</guid>
       <description>&lt;p&gt;令人混亂的提升-待撰寫&lt;/p&gt;</description>
     </item>
     <item>
       <title>Start!</title>
-      <link>//localhost:1313/posts/hugo-buildup-webpage/</link>
+      <link>/posts/hugo-buildup-webpage/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/hugo-buildup-webpage/</guid>
+      <guid>/posts/hugo-buildup-webpage/</guid>
       <description>&lt;p&gt;開始建立我的 Hugo Web page-待補充&lt;/p&gt;</description>
     </item>
     <item>
       <title>選擇ASTRO Camp的原因</title>
-      <link>//localhost:1313/posts/astro-capm/</link>
+      <link>/posts/astro-capm/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/astro-capm/</guid>
+      <guid>/posts/astro-capm/</guid>
       <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
     </item>
     <item>
       <title>JavaScripts-Flow Control</title>
-      <link>//localhost:1313/posts/js-flowcontrol/</link>
+      <link>/posts/js-flowcontrol/</link>
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/js-flowcontrol/</guid>
+      <guid>/posts/js-flowcontrol/</guid>
       <description>&lt;h2 id=&#34;流程控制-flow-control&#34;&gt;流程控制 Flow Control&lt;/h2&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;</description>
     </item>
   </channel>

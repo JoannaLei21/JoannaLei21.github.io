@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Joanna&#39;s Blog</title>
-    <link>//localhost:1313/tags/python/</link>
+    <link>/tags/python/</link>
     <description>Recent content in Python on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>糖果題</title>
-      <link>//localhost:1313/posts/candy/</link>
+      <link>/posts/candy/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/candy/</guid>
+      <guid>/posts/candy/</guid>
       <description>&lt;h1 id=&#34;龍哥的糖果題&#34;&gt;龍哥的糖果題&lt;/h1&gt;</description>
     </item>
     <item>
       <title>Python-Django</title>
-      <link>//localhost:1313/posts/py-django/</link>
+      <link>/posts/py-django/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-django/</guid>
+      <guid>/posts/py-django/</guid>
       <description>&lt;p&gt;使用 Django 框架建立網站&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python-Function</title>
-      <link>//localhost:1313/posts/py-function/</link>
+      <link>/posts/py-function/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-function/</guid>
+      <guid>/posts/py-function/</guid>
       <description>&lt;h2 id=&#34;在-python-裡的函數-待補充&#34;&gt;在 Python 裡的函數-待補充&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-LEGB</title>
-      <link>//localhost:1313/posts/py--legb/</link>
+      <link>/posts/py--legb/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py--legb/</guid>
+      <guid>/posts/py--legb/</guid>
       <description>&lt;h2 id=&#34;function-的作用域&#34;&gt;Function 的作用域&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-Set</title>
-      <link>//localhost:1313/posts/py-set/</link>
+      <link>/posts/py-set/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-set/</guid>
+      <guid>/posts/py-set/</guid>
       <description>&lt;h2 id=&#34;set-集合&#34;&gt;Set 集合&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-Tuple</title>
-      <link>//localhost:1313/posts/py-tuple/</link>
+      <link>/posts/py-tuple/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-tuple/</guid>
+      <guid>/posts/py-tuple/</guid>
       <description>&lt;h2 id=&#34;什麼是tuple&#34;&gt;什麼是&lt;strong&gt;Tuple&lt;/strong&gt;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Python-裝飾器Decorator</title>
-      <link>//localhost:1313/posts/py-decorator/</link>
+      <link>/posts/py-decorator/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/py-decorator/</guid>
+      <guid>/posts/py-decorator/</guid>
       <description>&lt;p&gt;Decorator-待撰寫&lt;/p&gt;</description>
     </item>
     <item>
       <title>Start!</title>
-      <link>//localhost:1313/posts/hugo-buildup-webpage/</link>
+      <link>/posts/hugo-buildup-webpage/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/hugo-buildup-webpage/</guid>
+      <guid>/posts/hugo-buildup-webpage/</guid>
       <description>&lt;p&gt;開始建立我的 Hugo Web page-待補充&lt;/p&gt;</description>
     </item>
     <item>
       <title>選擇ASTRO Camp的原因</title>
-      <link>//localhost:1313/posts/astro-capm/</link>
+      <link>/posts/astro-capm/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/astro-capm/</guid>
+      <guid>/posts/astro-capm/</guid>
       <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
     </item>
   </channel>
