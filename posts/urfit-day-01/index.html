@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrFit-Day 01 | Joanna&#39;s Blog</title>
+
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
+
+<link rel="canonical" href="//localhost:1313/posts/urfit-day-01/" />
+
+
+
+<meta name="author" content="Joanna Lei" />
+<meta name="description" content="Noob in Coding 新人日誌" />
+
+
+<meta name="keywords" content="Job">
+
+
+
+<meta name="generator" content="Hugo 0.140.1">
+
+
+<meta property="og:url" content="//localhost:1313/posts/urfit-day-01/">
+  <meta property="og:site_name" content="Joanna&#39;s Blog">
+  <meta property="og:title" content="UrFit-Day 01">
+  <meta property="og:description" content="Noob in Coding 新人日誌">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-17T00:00:00+00:00">
+    <meta property="article:tag" content="Job">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="UrFit-Day 01">
+  <meta name="twitter:description" content="Noob in Coding 新人日誌">
+
+
+
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav class="mt-4 lg:mt-8 py-4">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!">
+        <div class="h-10 rounded-full">
+          <img src="/cat.png" alt="Joanna&#39;s Bolg" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="//localhost:1313/" class="text-lg font-semibold cursor-pointer">
+          Joanna&#39;s Bolg
+        </a>
+        
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="About">
+    <ion-icon name="information-circle"></ion-icon>About</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="Archives">
+    <ion-icon name="archive"></ion-icon>
+    Archives
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="All Categories">
+    <ion-icon name="grid"></ion-icon>
+    All Categories
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="All Tags">
+    <ion-icon name="pricetags"></ion-icon>
+    All Tags
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="About">About</div>
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="Archives">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="All Categories">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="All Tags">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="mt-4 px-4">
+  
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  
+    
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#noob-in-coding-新人日誌">Noob in Coding 新人日誌</a></li>
+    <li><a href="#入職前準備">入職前準備</a></li>
+    <li><a href="#第一天上班">第一天上班～</a>
+      <ul>
+        <li><a href="#加加加">加加加：</a></li>
+        <li><a href="#開會">開會：</a></li>
+        <li><a href="#今天的工作內容">今天的工作內容：</a></li>
+      </ul>
+    </li>
+    <li><a href="#總結">總結</a>
+      <ul>
+        <li><a href="#分享今天得到的學習資源">分享今天得到的學習資源：</a></li>
+        <li><a href="#言文字">言文字</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      <div class="dream-adsense px-5">
+      
+      </div>
+    </div>
+    
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="UrFit-Day 01">
+  <meta itemprop="description" content="Noob in Coding 新人日誌">
+  <meta itemprop="datePublished" content="2025-02-17T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-02-17T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1121">
+  <meta itemprop="keywords" content="Job">
+
+      <header>
+        <h1 itemprop="headline">UrFit-Day 01</h1>
+        <p class="text-sm">
+          
+            Monday, Feb 17, 2025
+          
+
+          | <span>3 minute read</span>
+
+          
+          | <span>Updated at
+            
+              Monday, Feb 17, 2025
+            </span>
+          
+        </p>
+        <div class="flex justify-between">
+          <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Joanna Lei</span>
+    
+  
+  </span>
+</div>
+
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=UrFit-Day%2001&amp;url=//localhost:1313/posts/urfit-day-01/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=//localhost:1313/posts/urfit-day-01/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=UrFit-Day%2001%20//localhost:1313/posts/urfit-day-01/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      
+      <img src="/img/D-job.png" alt="UrFit-Day 01" />
+      
+
+      <h2 id="noob-in-coding-新人日誌">Noob in Coding 新人日誌</h2>
+<h2 id="入職前準備">入職前準備</h2>
+<p>拿到offer之後，其實有蠻多事要準備的，抓了一週的時間，本來還想說可以安排學習，沒想到要處裡的事情比預期多，還好沒有把入職日期壓太近，不然要忙翻了＠＠</p>
+<p>有幾個文件因該是大家入職都會需要辦理的，這邊記錄一下：</p>
+<ol>
+<li>
+<p>勞保退保紀錄：這個可以線上申請，BUT!<img src="https://www.bli.gov.tw/" alt="勞保局">網站真的很爛（有興趣這邊有迷宮入口），所以我直接殺去勞保局，因為離五倍蠻近的，騎車10分鐘內。<br>
+殺過去不用五分鍾GET! 進勞保局大門，右轉到底去快速列印區，拿號碼排，跟櫃檯說要勞保紀錄，30秒就拿到了，免費FREE~~記得要帶身份證</p>
+</li>
+<li>
+<p>健康檢查：需要到健保局認證的醫院或診所去做一般勞工的健康檢查，這邊有網站<a href="https://hrpts.osha.gov.tw/Home/CertifiedHospInfoSearch">勞工體格及健康檢查認可醫療機構查詢</a>可以查詢離自己近的單位，我在啟新，線上預約好之間之後，過去加上填資料的時間大約一小時內搞定，費用$950，有需公司有負擔，可以詢問公司“健檢的部分請問可以請公司帳嗎？可以的話再跟公司要發票抬頭和統編”。報告可以自取或是寄送，時間約7~9個工天。</p>
+</li>
+</ol>
+<h2 id="第一天上班">第一天上班～</h2>
+<p>帶著緊張又興奮的心情，開始工程師的生活～</p>
+<h3 id="加加加">加加加：</h3>
+<ul>
+<li>公司 Mail （人資提供）</li>
+<li>團隊 Notion borad（提供email給主管加入）</li>
+<li>同事 Discord （提供ID）</li>
+<li>GitHube(提供email，如果想要公私分開，可以再開一個帳號)</li>
+</ul>
+<h3 id="開會">開會：</h3>
+<ul>
+<li>和廠商stand up meeting 10~15 mins</li>
+<li>內部工作報告 5~10 mins</li>
+<li>Code review (隔周看)：針對Reviewer的comment做討論，會討論寫法＆書寫格式等等。</li>
+</ul>
+<h3 id="今天的工作內容">今天的工作內容：</h3>
+<ul>
+<li>clone專案後環境設定並開啟專案</li>
+<li>閱讀新人手冊（資訊量龐大，抓一週）</li>
+<li>拿到一張卡～（上課說的拿票）小小的票但腦袋要爆炸了</li>
+<li>針對要處理的，先了解初階的程式碼React, 解構賦值, .jsx</li>
+</ul>
+<h2 id="總結">總結</h2>
+<p>第一天上班蠻開心的～同事都很Nice（怕嚇跑我之類XD），整體工作氛圍不會很緊繃，大家告一個段落會稍微聊聊關心一下我的進度。</p>
+<p>另外真的體會到，結業不是結束，是新的開始！！而且可能是全新。<br>
+現在工作會使用到的React, TypeScript, HASURA, GraphQL,都是新的沒學過，頂多有些概念上課有說到，不惑覺得特別陌生，但要說會用&hellip;還是得看資料學習才行。</p>
+<p>今天領的卡，期限是這週完成，在正式的處理之前，有很多東西要讀，有點緊張怕自己進度很慢，這週來不及完成，小有壓力，其他的都覺得很棒！</p>
+<h3 id="分享今天得到的學習資源">分享今天得到的學習資源：</h3>
+<p><a href="https://www.youtube.com/watch?v=YlI-sUoACDw&amp;list=PLS5AiLcCHgNz8LdqGYtySne9YHORxRz4E&amp;index=7">影片學習React! 包含Kuro老師帶你複習燒腦的JacaScript基礎概念題</a></p>
+<p><a href="https://ithelp.ithome.com.tw/articles/10216355">鐵人賽React文章：從 Hooks 開始，讓你的網頁 React 起來</a></p>
+<h3 id="言文字">言文字</h3>
+<p>現在的工作室遠端工作，一天進公司大家開會，雖說是公司，其實是一家支持數位遊牧的咖啡廳，環境安靜，簡潔明亮，因為不是網紅咖啡廳，幾乎來的人都是在工作或看書。</p>
+<p>如果想換個環境，也可以來這邊一起工作呦～目前訓練階段二、三、四都在這邊努力～</p>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <div></div>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/apple-watch-app/" title="apple watch App">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+            <span class="max-w-48 truncate">apple watch App</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+    </article>
+  </div>
+
+  
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">About Me</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hello I&rsquo;m Joanna, this is my blog</p>
+<p>我會在這邊分享我學習程式語言的心得與筆記</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+  <script src="/js/grid.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

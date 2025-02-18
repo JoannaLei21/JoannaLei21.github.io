@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Joanna&#39;s Blog</title>
-    <link>/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Interview</title>
-      <link>/tags/interview/</link>
-      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/tags/interview/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Job</title>
-      <link>/tags/job/</link>
-      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/tags/job/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JavaScript</title>
-      <link>/tags/javascript/</link>
-      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>/tags/javascript/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>/tags/python/</guid>
+      <link>//localhost:1313/tags/job/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/job/</guid>
       <description></description>
     </item>
     <item>
       <title>Project</title>
-      <link>/tags/project/</link>
-      <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/project/</guid>
+      <link>//localhost:1313/tags/project/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/project/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview</title>
+      <link>//localhost:1313/tags/interview/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/interview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>//localhost:1313/tags/javascript/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>//localhost:1313/tags/python/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Basic Knowledge</title>
-      <link>/tags/basic-knowledge/</link>
+      <link>//localhost:1313/tags/basic-knowledge/</link>
       <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/basic-knowledge/</guid>
+      <guid>//localhost:1313/tags/basic-knowledge/</guid>
       <description></description>
     </item>
     <item>
       <title>HTML</title>
-      <link>/tags/html/</link>
+      <link>//localhost:1313/tags/html/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/html/</guid>
+      <guid>//localhost:1313/tags/html/</guid>
       <description></description>
     </item>
     <item>
       <title>CSS</title>
-      <link>/tags/css/</link>
+      <link>//localhost:1313/tags/css/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/tags/css/</guid>
+      <guid>//localhost:1313/tags/css/</guid>
       <description></description>
     </item>
   </channel>

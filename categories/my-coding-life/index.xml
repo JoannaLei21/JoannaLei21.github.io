@@ -2,45 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My Coding Life on Joanna&#39;s Blog</title>
-    <link>/categories/my-coding-life/</link>
+    <link>//localhost:1313/categories/my-coding-life/</link>
     <description>Recent content in My Coding Life on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/my-coding-life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/my-coding-life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UrFit-Day 01</title>
+      <link>//localhost:1313/posts/urfit-day-01/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/urfit-day-01/</guid>
+      <description>&lt;h2 id=&#34;day-01-新人日誌&#34;&gt;Day 01 新人日誌&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>apple watch App</title>
+      <link>//localhost:1313/posts/apple-watch-app/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/apple-watch-app/</guid>
+      <description>&lt;h2 id=&#34;side-project-製作一個apple-watch-app&#34;&gt;Side Project: 製作一個apple Watch App&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>Google Map </title>
-      <link>/posts/18th-googlemap/</link>
+      <link>//localhost:1313/posts/18th-googlemap/</link>
       <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/18th-googlemap/</guid>
+      <guid>//localhost:1313/posts/18th-googlemap/</guid>
       <description>&lt;p&gt;串接Google Map 顯示聚會地點&lt;/p&gt;</description>
     </item>
     <item>
       <title>Line Pay Api串接</title>
-      <link>/posts/18th-linepayapi/</link>
+      <link>//localhost:1313/posts/18th-linepayapi/</link>
       <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/18th-linepayapi/</guid>
+      <guid>//localhost:1313/posts/18th-linepayapi/</guid>
       <description>&lt;p&gt;使用 Django 串接 Line Pay&lt;/p&gt;</description>
     </item>
     <item>
       <title>Moordule-README</title>
-      <link>/posts/18th-readme/</link>
+      <link>//localhost:1313/posts/18th-readme/</link>
       <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/18th-readme/</guid>
+      <guid>//localhost:1313/posts/18th-readme/</guid>
       <description>&lt;p&gt;專案 README.md&lt;/p&gt;</description>
     </item>
     <item>
       <title>選擇ASTRO Camp的原因</title>
-      <link>/posts/astro-capm/</link>
+      <link>//localhost:1313/posts/astro-capm/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/astro-capm/</guid>
+      <guid>//localhost:1313/posts/astro-capm/</guid>
       <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Resource</title>
-      <link>/posts/resource/</link>
+      <link>//localhost:1313/posts/resource/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/resource/</guid>
+      <guid>//localhost:1313/posts/resource/</guid>
       <description>&lt;h2 id=&#34;上課介紹的資源連結&#34;&gt;上課介紹的資源連結&lt;/h2&gt;</description>
     </item>
   </channel>
