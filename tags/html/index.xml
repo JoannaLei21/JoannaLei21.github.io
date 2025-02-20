@@ -15,19 +15,5 @@
       <guid>/posts/html-setting/</guid>
       <description>&lt;p&gt;解析 HTML 開頭的那些咒語們&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>Start!</title>
-      <link>/posts/hugo-buildup-webpage/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/hugo-buildup-webpage/</guid>
-      <description>&lt;p&gt;開始建立我的 Hugo Web page-待補充&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>選擇ASTRO Camp的原因</title>
-      <link>/posts/astro-capm/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/astro-capm/</guid>
-      <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
-    </item>
   </channel>
 </rss>

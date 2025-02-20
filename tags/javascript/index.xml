@@ -16,13 +16,6 @@
       <description>&lt;h1 id=&#34;龍哥的糖果題&#34;&gt;龍哥的糖果題&lt;/h1&gt;</description>
     </item>
     <item>
-      <title>Google Map </title>
-      <link>/posts/18th-googlemap/</link>
-      <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/18th-googlemap/</guid>
-      <description>&lt;p&gt;串接Google Map 顯示聚會地點&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>JavaScript-Closuer</title>
       <link>/posts/js-closure/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
@@ -35,20 +28,6 @@
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
       <guid>/posts/js-variable-hosting/</guid>
       <description>&lt;p&gt;令人混亂的提升-待撰寫&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Start!</title>
-      <link>/posts/hugo-buildup-webpage/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/hugo-buildup-webpage/</guid>
-      <description>&lt;p&gt;開始建立我的 Hugo Web page-待補充&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>選擇ASTRO Camp的原因</title>
-      <link>/posts/astro-capm/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/astro-capm/</guid>
-      <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
     </item>
     <item>
       <title>JavaScripts-Flow Control</title>

@@ -6,8 +6,15 @@
     <description>Recent content in Learning Code on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/learning-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apple watch App</title>
+      <link>/posts/apple-watch-app/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/apple-watch-app/</guid>
+      <description>&lt;h2 id=&#34;side-project-製作一個apple-watch-app&#34;&gt;Side Project: 製作一個apple Watch App&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>糖果題</title>
       <link>/posts/candy/</link>
@@ -133,6 +140,13 @@
       <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate>
       <guid>/posts/js-flowcontrol/</guid>
       <description>&lt;h2 id=&#34;流程控制-flow-control&#34;&gt;流程控制 Flow Control&lt;/h2&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Resource</title>
+      <link>/posts/resource/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>/posts/resource/</guid>
+      <description>&lt;h2 id=&#34;上課介紹的資源連結&#34;&gt;上課介紹的資源連結&lt;/h2&gt;</description>
     </item>
   </channel>
 </rss>

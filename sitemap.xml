@@ -3,22 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/categories/</loc>
-    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/job/</loc>
-    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/my-coding-life/</loc>
-    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2025-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-04/</loc>
+    <lastmod>2025-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-03/</loc>
+    <lastmod>2025-02-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/urfit-day-02/</loc>
     <lastmod>2025-02-18T00:00:00+00:00</lastmod>
@@ -26,7 +32,16 @@
     <loc>/posts/urfit-day-01/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/posts/feedback/</loc>
+    <lastmod>2025-02-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/posts/apple-watch-app/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/job-hunting/</loc>
+    <lastmod>2025-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/learning-code/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/project/</loc>
@@ -35,16 +50,10 @@
     <loc>/tags/interview/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/job-hunting/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/posts/interview-urfit/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/javascript/</loc>
-    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/learning-code/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/python/</loc>
@@ -109,9 +118,6 @@
   </url><url>
     <loc>/posts/interview-q/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/css/</loc>
-    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/hugo-buildup-webpage/</loc>
     <lastmod>2024-11-17T00:00:00+00:00</lastmod>
