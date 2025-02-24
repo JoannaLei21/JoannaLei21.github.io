@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urfit Day 06 | Joanna&#39;s Blog</title>
+
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
+
+<link rel="canonical" href="/posts/urfit-day-06/" />
+
+
+
+<meta name="author" content="Joanna Lei" />
+<meta name="description" content="Day-6 三元運算燒腦中" />
+
+
+<meta name="keywords" content="Job">
+
+
+
+<meta name="generator" content="Hugo 0.140.1">
+
+
+<meta property="og:url" content="/posts/urfit-day-06/">
+  <meta property="og:site_name" content="Joanna&#39;s Blog">
+  <meta property="og:title" content="Urfit Day 06">
+  <meta property="og:description" content="Day-6 三元運算燒腦中">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-24T00:00:00+00:00">
+    <meta property="article:tag" content="Job">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Urfit Day 06">
+  <meta name="twitter:description" content="Day-6 三元運算燒腦中">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav class="mt-4 lg:mt-8 py-4">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!">
+        <div class="h-10 rounded-full">
+          <img src="/cat.png" alt="Joanna&#39;s Bolg" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          Joanna&#39;s Bolg
+        </a>
+        
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="About">
+    <ion-icon name="information-circle"></ion-icon>About</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="Archives">
+    <ion-icon name="archive"></ion-icon>
+    Archives
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="All Categories">
+    <ion-icon name="grid"></ion-icon>
+    All Categories
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="All Tags">
+    <ion-icon name="pricetags"></ion-icon>
+    All Tags
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="About">About</div>
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="Archives">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="All Categories">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="All Tags">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="mt-4 px-4">
+  
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  
+    
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#day-6-三元運算燒腦中">Day-6 三元運算燒腦中</a></li>
+      </ul>
+    </li>
+    <li><a href="#今日進度">今日進度</a>
+      <ul>
+        <li><a href="#拿到的票">拿到的票</a></li>
+        <li><a href="#react">React:</a></li>
+        <li><a href="#會議">會議</a></li>
+        <li><a href="#明天進度">明天進度</a></li>
+        <li><a href="#回答出來的問題">回答出來的問題</a></li>
+        <li><a href="#待回答的問題們">待回答的問題們</a></li>
+        <li><a href="#遇到的問題">遇到的問題</a></li>
+      </ul>
+    </li>
+    <li><a href="#今日心得">今日心得</a></li>
+  </ul>
+</nav>
+
+      <div class="dream-adsense px-5">
+      
+      </div>
+    </div>
+    
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="Urfit Day 06">
+  <meta itemprop="description" content="Day-6 三元運算燒腦中">
+  <meta itemprop="datePublished" content="2025-02-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-02-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1013">
+  <meta itemprop="keywords" content="Job">
+
+      <header>
+        <h1 itemprop="headline">Urfit Day 06</h1>
+        <p class="text-sm">
+          
+            Monday, Feb 24, 2025
+          
+
+          | <span>3 minute read</span>
+
+          
+          | <span>Updated at
+            
+              Monday, Feb 24, 2025
+            </span>
+          
+        </p>
+        <div class="flex justify-between">
+          <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Joanna Lei</span>
+    
+  
+  </span>
+</div>
+
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=Urfit%20Day%2006&amp;url=/posts/urfit-day-06/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=/posts/urfit-day-06/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=Urfit%20Day%2006%20/posts/urfit-day-06/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      
+      <img src="/img/D6-Job.png" alt="Urfit Day 06" />
+      
+
+      <h3 id="day-6-三元運算燒腦中">Day-6 三元運算燒腦中</h3>
+<h2 id="今日進度">今日進度</h2>
+<h3 id="拿到的票">拿到的票</h3>
+<ul>
+<li>
+<p><strong>推PR</strong>：看新進職員手冊裡，關於Git的規範。把做好的票push上去之後發PR。</p>
+</li>
+<li>
+<p><strong>優化程式碼</strong>：針對同事的回覆，優化程式碼（三元運算式重複的邏輯＆重複物件做簡化）</p>
+<p>原本設定：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">condition</span>: <span style="color:#66d9ef">hasTabSetting</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">tabsContents</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;program&#39;</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">withProgram</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`/creators/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?tabkey=programs`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">label</span>: <span style="color:#66d9ef">formatMessage</span>(<span style="color:#a6e22e">commonMessages</span>.<span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">addCourse</span>),
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">condition</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">enabledModules.podcast</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">hasTabSetting</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">tabsContents</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;podcast&#39;</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">withPodcast</span>),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`/creators/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?tabkey=podcasts`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">label</span>: <span style="color:#66d9ef">formatMessage</span>(<span style="color:#a6e22e">commonMessages</span>.<span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">podcasts</span>),
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 下列多筆略 --&gt;</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span></code></pre></div><p>優化程式碼：
+1.將重複的值拉出來，在設定一個公版用.map將值帶入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actionContents</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {<span style="color:#a6e22e">key</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;program&#39;</span>, <span style="color:#a6e22e">withKey</span>: <span style="color:#66d9ef">withProgram</span>, <span style="color:#a6e22e">tabkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;programs&#34;</span>, <span style="color:#a6e22e">contentKey</span>: <span style="color:#66d9ef">commonMessages.content.addCourse</span>},
+</span></span><span style="display:flex;"><span>  {<span style="color:#a6e22e">key</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;podcast&#39;</span>, <span style="color:#a6e22e">moduleEnabled</span>: <span style="color:#66d9ef">enabledModules.podcast</span>, <span style="color:#a6e22e">tabkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;podcasts&#34;</span>, <span style="color:#a6e22e">withKey</span>: <span style="color:#66d9ef">withPodcast</span>, <span style="color:#a6e22e">contentKey</span>: <span style="color:#66d9ef">commonMessages.content.podcasts</span>},
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">&lt;!-- 下列多筆略 --&gt;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">actionContents</span>.<span style="color:#a6e22e">map</span>(({ <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">moduleEnabled</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">withKey</span>, <span style="color:#a6e22e">tabkey</span>, <span style="color:#a6e22e">contentKey</span> }
+</span></span><span style="display:flex;"><span>  )  <span style="color:#f92672">=&gt;</span> ({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">condition</span>: <span style="color:#66d9ef">moduleEnabled</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">hasTabSetting</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">tabsContents</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">key</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">withKey</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`/creators/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?tabkey=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tabkey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">label</span>: <span style="color:#66d9ef">formatMessage</span>(<span style="color:#a6e22e">contentKey</span>),
+</span></span><span style="display:flex;"><span>}))
+</span></span></code></pre></div><p>2.再將重複判斷拉出來。用到<code>??</code>空值運算</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tabsContents</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">settings</span>[<span style="color:#e6db74">&#39;creator.content.tab&#39;</span>]<span style="color:#f92672">?</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#f92672">||</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hasTabSetting</span> <span style="color:#f92672">=</span> Boolean(<span style="color:#a6e22e">settings</span>[<span style="color:#e6db74">&#39;creator.content.tab&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actionContents</span><span style="color:#f92672">:</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">key</span>: <span style="color:#66d9ef">Module</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">withKey</span>: <span style="color:#66d9ef">boolean</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tabkey</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contentKey</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">defaultMessage</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}[] <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {<span style="color:#a6e22e">key</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;program&#39;</span>, <span style="color:#a6e22e">withKey</span>: <span style="color:#66d9ef">withProgram</span>, <span style="color:#a6e22e">tabkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;programs&#34;</span>, <span style="color:#a6e22e">contentKey</span>: <span style="color:#66d9ef">commonMessages.content.addCourse</span>},
+</span></span><span style="display:flex;"><span>  {<span style="color:#a6e22e">key</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;podcast&#39;</span>, <span style="color:#a6e22e">tabkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;podcasts&#34;</span>, <span style="color:#a6e22e">withKey</span>: <span style="color:#66d9ef">withPodcast</span>, <span style="color:#a6e22e">contentKey</span>: <span style="color:#66d9ef">commonMessages.content.podcasts</span>},
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- 下列多筆略 --&gt;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">actionContents</span>.<span style="color:#a6e22e">map</span>(({ <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">withKey</span>, <span style="color:#a6e22e">tabkey</span>, <span style="color:#a6e22e">contentKey</span> }
+</span></span><span style="display:flex;"><span>  )  <span style="color:#f92672">=&gt;</span> ({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">condition</span><span style="color:#f92672">:</span> <span style="color:#f92672">==</span>(<span style="color:#a6e22e">enabledModules</span>[<span style="color:#a6e22e">key</span>])<span style="color:#f92672">==</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">hasTabSetting</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">tabsContents</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">key</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">withKey</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`/creators/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?tabkey=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tabkey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">label</span>: <span style="color:#66d9ef">formatMessage</span>(<span style="color:#a6e22e">contentKey</span>),
+</span></span><span style="display:flex;"><span>}))
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="react">React:</h3>
+<p><a href="https://ithelp.ithome.com.tw/articles/10216355">鐵人賽React文章：從 Hooks 開始，讓你的網頁 React 起來</a></p>
+<ul>
+<li>今天沒進度</li>
+</ul>
+<h3 id="會議">會議</h3>
+<ul>
+<li>例會（約10分鍾）：簡單報告上週五進度</li>
+</ul>
+<h3 id="明天進度">明天進度</h3>
+<ul>
+<li>接新的票</li>
+</ul>
+<h3 id="回答出來的問題">回答出來的問題</h3>
+<ul>
+<li><strong>Q: 為什麼JSX可以直接操作?</strong><br>
+主要是在問，為什麼HTML可以放在JavaScript裡面，而且可以運作？ <br>
+是因為這邊是JSX檔，全名是 JavaScript XML，瀏覽器並讀不懂JSX，而是需要編譯器工具，通常在 React 專案中，JSX 轉譯會自動由 Babel 或 Vite、Webpack 等工具處理。</li>
+</ul>
+<h3 id="待回答的問題們">待回答的問題們</h3>
+<ul>
+<li>Q.1: useState &amp; useEffect的差別是？</li>
+<li>Q.2: stateless？</li>
+<li>Q.3: 查名詞 ：Template string 模板字串``</li>
+<li>Q.4: 什麼是Migration/ Migrate (回答不出來要被打屁屁了＠＠)</li>
+<li>Q.5: nullish vs falsy</li>
+</ul>
+<h3 id="遇到的問題">遇到的問題</h3>
+<ul>
+<li>TypeScript 型別定義，沒有定義導致無法使用變數。</li>
+</ul>
+<h2 id="今日心得">今日心得</h2>
+<p>在下判斷式的時候，如果沒有清楚的知道設定的條件，就沒辦法很好的定義判斷式。<br>
+早上針對禮拜五的判斷式和另外一個主管討論了一下，因為對設定有不同的設想，所以解法就不一樣。</p>
+<p>今天把上週小出來的功能，優化再優化！！，所有會重複用的的Code都拔出來了，真是累（苦笑），對於物件可以怎麼設定和轉換還不熟悉，所以操作起來卡卡的，雖然有Ai輔助，但有需設定還是要自己看清楚，沒辦法100%照貼。<br>
+試著用ChatGPT, Perplexity, Claude來解答一樣的問題，沒想到這次最佳解答是ChatGPT！！看來以後還是都讓他們試著回答好了～Perplexity沒有回答到問題，Claude給了超複雜的解答，差點沒看到暈倒（笑）。</p>
+<p>第一張票算是順利的通關了，嗚嗚好感動，剩一點時間再來繼續K React，還要複習JavaScript，不然基礎的觀念沒弄懂，真的很卡。（現在懺悔上課期間沒有多練習一秒鐘）</p>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <div></div>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/urfit-day-05/" title="Urfit Day 05">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+            <span class="max-w-48 truncate">Urfit Day 05</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+    </article>
+  </div>
+
+  
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">About Me</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hello I&rsquo;m Joanna, this is my blog</p>
+<p>我會在這邊分享我學習程式語言的心得與筆記</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
