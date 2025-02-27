@@ -409,7 +409,7 @@
 </span></span><span style="display:flex;"><span>]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">actionContents</span>.<span style="color:#a6e22e">map</span>(({ <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">withKey</span>, <span style="color:#a6e22e">tabkey</span>, <span style="color:#a6e22e">contentKey</span> }
 </span></span><span style="display:flex;"><span>  )  <span style="color:#f92672">=&gt;</span> ({
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">condition</span><span style="color:#f92672">:</span> <span style="color:#f92672">==</span>(<span style="color:#a6e22e">enabledModules</span>[<span style="color:#a6e22e">key</span>])<span style="color:#f92672">==</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">hasTabSetting</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">tabsContents</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">key</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">withKey</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">condition</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">enabledModules</span>[<span style="color:#a6e22e">key</span>]) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">hasTabSetting</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">tabsContents</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">key</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">withKey</span>),
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`/creators/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">?tabkey=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tabkey</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">label</span>: <span style="color:#66d9ef">formatMessage</span>(<span style="color:#a6e22e">contentKey</span>),
 </span></span><span style="display:flex;"><span>}))
@@ -457,7 +457,13 @@
       <div class="divider"></div>
       <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
         
-        <div></div>
+        <a class="group btn btn-outline" href="/posts/urfit-day-07/" title="Urfit Day 07">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+            <span class="max-w-48 truncate">Urfit Day 07</span>
+          </div>
+        </a>
         
 
         
