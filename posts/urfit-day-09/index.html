@@ -3,7 +3,7 @@
   x-data
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urfit Day 09 | Joanna&#39;s Blog</title>
@@ -12,7 +12,7 @@
 <link href="/favicon.ico" rel="icon" type="image/x-icon" />
 
 
-<link rel="canonical" href="/posts/urfit-day-09/" />
+<link rel="canonical" href="//localhost:1313/posts/urfit-day-09/" />
 
 
 
@@ -27,7 +27,7 @@
 <meta name="generator" content="Hugo 0.140.1">
 
 
-<meta property="og:url" content="/posts/urfit-day-09/">
+<meta property="og:url" content="//localhost:1313/posts/urfit-day-09/">
   <meta property="og:site_name" content="Joanna&#39;s Blog">
   <meta property="og:title" content="Urfit Day 09">
   <meta property="og:description" content="Day-9 OMG 層層包疊">
@@ -48,9 +48,7 @@
 
 
 
-  
-
-<link rel="stylesheet" href="/css/output.min.css" />
+<link rel="stylesheet" href="/css/output.css" />
 
 
 
@@ -100,7 +98,7 @@
       
       <div>
         
-        <a href="/" class="text-lg font-semibold cursor-pointer">
+        <a href="//localhost:1313/" class="text-lg font-semibold cursor-pointer">
           Joanna&#39;s Bolg
         </a>
         
@@ -279,7 +277,7 @@
   <meta itemprop="description" content="Day-9 OMG 層層包疊">
   <meta itemprop="datePublished" content="2025-02-27T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-27T00:00:00+00:00">
-  <meta itemprop="wordCount" content="198">
+  <meta itemprop="wordCount" content="679">
   <meta itemprop="keywords" content="Job">
 
       <header>
@@ -289,7 +287,7 @@
             Thursday, Feb 27, 2025
           
 
-          | <span>1 minute read</span>
+          | <span>2 minute read</span>
 
           
           | <span>Updated at
@@ -324,19 +322,19 @@
   
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://x.com/intent/post?text=Urfit%20Day%2009&amp;url=/posts/urfit-day-09/" target="_blank" rel="noopener noreferrer"
+      href="https://x.com/intent/post?text=Urfit%20Day%2009&amp;url=//localhost:1313/posts/urfit-day-09/" target="_blank" rel="noopener noreferrer"
       title="Share on X">
       <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://facebook.com/sharer/sharer.php?u=/posts/urfit-day-09/" target="_blank" rel="noopener noreferrer"
+      href="https://facebook.com/sharer/sharer.php?u=//localhost:1313/posts/urfit-day-09/" target="_blank" rel="noopener noreferrer"
       title="Share on Facebook">
       <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://wa.me/?text=Urfit%20Day%2009%20/posts/urfit-day-09/" target="_blank" rel="noopener noreferrer"
+      href="https://wa.me/?text=Urfit%20Day%2009%20//localhost:1313/posts/urfit-day-09/" target="_blank" rel="noopener noreferrer"
       title="Share on WhatsApp">
       <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
     </a>
@@ -369,6 +367,9 @@
 <li>Day 17</li>
 </ul>
 <h3 id="會議">會議</h3>
+<ul>
+<li>部署會議：週五放假，這週不執行部署</li>
+</ul>
 <h3 id="明天進度">明天進度</h3>
 <ul>
 <li>補昨天早上的時數，完成手上的票</li>
@@ -385,18 +386,43 @@
 <li>Q.4: nullish vs falsy</li>
 <li>Q.5: upSert : upDate or insert/ onConflict</li>
 <li>Q.6: 資料庫 Constraints unique / PK</li>
+<li>Q.7: 什麼是dependency injection依賴注入</li>
+<li>Q.8: upSert : upDate or insert/ onConflict</li>
+<li>Q.9: 資料庫 Constraints unique / PK</li>
+<li>Q.10: useMemo, memonize(一種快取的方式), 閉包</li>
 </ul>
 <h3 id="遇到的問題">遇到的問題</h3>
 <ul>
-<li></li>
+<li>
+<p>找不到要程式碼在哪。
+要找最源頭抓到DATA的地方，但是卻一直跑去定義資料型別的地方。繞了老半天找不出個所以然才求救同事。才發現找錯地方了！<br>
+資料在一個<code>&lt;table&gt;</code>裡，然後才知道原來在JSX裡面的標籤，其實都是一個函數。之前因問長得一樣，取名用法也一樣，所以會覺得在JSX裡的<!-- raw HTML omitted -->, <!-- raw HTML omitted --> 跟在HTML裡是一樣的，但其實不一樣（好暈）。</p>
+</li>
+<li>
+<p>useState的觀念不熟悉。
+今天好不容易找到資料源，也看到有設定了useState，到要怎麼把它再放到我們要它運作的地方。<br>
+說不熟悉，一個是層層包疊，弄的很暈。再來是需要理解原本的code寫的邏輯，然後忘記useState需要再將並更資料讓React知道。在之前看鐵人賽的Day7有提到，為什麼它不動，完全忘記了，哎呀呀。</p>
+</li>
+<li>
+<p>怎麼從GraphQL抓出要的資料
+知らないもん&hellip;あとで調べてみる。看不懂吧，就跟我看GraphQL一樣。</p>
+</li>
 </ul>
 <h2 id="今日心得">今日心得</h2>
+<p>啊啊啊啊啊啊啊<br>
+好燒腦，以上。</p>
 
       
       <div class="divider"></div>
       <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
         
-        <div></div>
+        <a class="group btn btn-outline" href="/posts/graphql/" title="GraphQL">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+            <span class="max-w-48 truncate">GraphQL</span>
+          </div>
+        </a>
         
 
         
@@ -554,16 +580,12 @@
 
   
   
-    
-  
-  <script src="/js/grid.min.js"></script>
+  <script src="/js/grid.js"></script>
 
 
 
 
-  
-
-<script src="/js/main.min.js"></script>
+<script src="/js/main.js"></script>
 
     
 

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Joanna&#39;s Blog</title>
-    <link>/categories/</link>
+    <link>//localhost:1313/categories/</link>
     <description>Recent content in Categories on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Coding Life</title>
-      <link>/categories/my-coding-life/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/my-coding-life/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Job Hunting</title>
-      <link>/categories/job-hunting/</link>
-      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/job-hunting/</guid>
+      <link>//localhost:1313/categories/my-coding-life/</link>
+      <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/my-coding-life/</guid>
       <description></description>
     </item>
     <item>
       <title>Learning Code</title>
-      <link>/categories/learning-code/</link>
+      <link>//localhost:1313/categories/learning-code/</link>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/learning-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Job Hunting</title>
+      <link>//localhost:1313/categories/job-hunting/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/learning-code/</guid>
+      <guid>//localhost:1313/categories/job-hunting/</guid>
       <description></description>
     </item>
   </channel>

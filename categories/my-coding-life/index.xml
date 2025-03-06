@@ -2,87 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My Coding Life on Joanna&#39;s Blog</title>
-    <link>/categories/my-coding-life/</link>
+    <link>//localhost:1313/categories/my-coding-life/</link>
     <description>Recent content in My Coding Life on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/my-coding-life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/my-coding-life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Urfit Day 11</title>
+      <link>//localhost:1313/posts/urfit-day-11/</link>
+      <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/urfit-day-11/</guid>
+      <description>&lt;h3 id=&#34;day-11-大病初癒生日&#34;&gt;Day-11 大病初癒&amp;amp;生日&lt;/h3&gt;</description>
+    </item>
     <item>
       <title>Urfit Day 09</title>
-      <link>/posts/urfit-day-09/</link>
+      <link>//localhost:1313/posts/urfit-day-09/</link>
       <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-09/</guid>
+      <guid>//localhost:1313/posts/urfit-day-09/</guid>
       <description>&lt;h3 id=&#34;day-9-omg-層層包疊&#34;&gt;Day-9 OMG 層層包疊&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 08</title>
-      <link>/posts/urfit-day-08/</link>
+      <link>//localhost:1313/posts/urfit-day-08/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-08/</guid>
+      <guid>//localhost:1313/posts/urfit-day-08/</guid>
       <description>&lt;h3 id=&#34;day-8-新的票來了&#34;&gt;Day-8 新的票來了&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 07</title>
-      <link>/posts/urfit-day-07/</link>
+      <link>//localhost:1313/posts/urfit-day-07/</link>
       <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-07/</guid>
+      <guid>//localhost:1313/posts/urfit-day-07/</guid>
       <description>&lt;h3 id=&#34;day-7-三元運算燒腦中&#34;&gt;Day-7 三元運算燒腦中&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 06</title>
-      <link>/posts/urfit-day-06/</link>
+      <link>//localhost:1313/posts/urfit-day-06/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-06/</guid>
+      <guid>//localhost:1313/posts/urfit-day-06/</guid>
       <description>&lt;h3 id=&#34;day-6-三元運算燒腦中&#34;&gt;Day-6 三元運算燒腦中&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 05</title>
-      <link>/posts/urfit-day-05/</link>
+      <link>//localhost:1313/posts/urfit-day-05/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-05/</guid>
+      <guid>//localhost:1313/posts/urfit-day-05/</guid>
       <description>&lt;h3 id=&#34;day-5-要接票了&#34;&gt;Day-5 要接票了！&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 04</title>
-      <link>/posts/urfit-day-04/</link>
+      <link>//localhost:1313/posts/urfit-day-04/</link>
       <pubDate>Thu, 20 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-04/</guid>
+      <guid>//localhost:1313/posts/urfit-day-04/</guid>
       <description>&lt;h3 id=&#34;day-4-被react搞暈的一天&#34;&gt;Day-4 被React搞暈的一天&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 03</title>
-      <link>/posts/urfit-day-03/</link>
+      <link>//localhost:1313/posts/urfit-day-03/</link>
       <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-03/</guid>
+      <guid>//localhost:1313/posts/urfit-day-03/</guid>
       <description>&lt;h3 id=&#34;day-3-很多會議的一天&#34;&gt;Day-3 很多會議的一天～&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 02</title>
-      <link>/posts/urfit-day-02/</link>
+      <link>//localhost:1313/posts/urfit-day-02/</link>
       <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-02/</guid>
+      <guid>//localhost:1313/posts/urfit-day-02/</guid>
       <description>&lt;p&gt;Noob in Coding 新人日誌&lt;/p&gt;</description>
     </item>
     <item>
       <title>UrFit Day 01</title>
-      <link>/posts/urfit-day-01/</link>
+      <link>//localhost:1313/posts/urfit-day-01/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-01/</guid>
+      <guid>//localhost:1313/posts/urfit-day-01/</guid>
       <description>&lt;h2 id=&#34;noob-in-coding-新人日誌&#34;&gt;Noob in Coding 新人日誌&lt;/h2&gt;</description>
     </item>
     <item>
       <title>成功轉職～</title>
-      <link>/posts/feedback/</link>
+      <link>//localhost:1313/posts/feedback/</link>
       <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/feedback/</guid>
+      <guid>//localhost:1313/posts/feedback/</guid>
       <description>&lt;h2 id=&#34;飯店櫃檯到數位遊牧-零基礎成功轉職工程師&#34;&gt;飯店櫃檯到數位遊牧 零基礎成功轉職工程師&lt;/h2&gt;</description>
     </item>
     <item>
       <title>選擇ASTRO Camp的原因</title>
-      <link>/posts/astro-capm/</link>
+      <link>//localhost:1313/posts/astro-capm/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/posts/astro-capm/</guid>
+      <guid>//localhost:1313/posts/astro-capm/</guid>
       <description>&lt;h2 id=&#34;轉職需要的不只是勇氣&#34;&gt;轉職需要的不只是勇氣&lt;/h2&gt;</description>
     </item>
   </channel>
