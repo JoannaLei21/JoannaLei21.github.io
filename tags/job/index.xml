@@ -2,108 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Job on Joanna&#39;s Blog</title>
-    <link>//localhost:1313/tags/job/</link>
+    <link>/tags/job/</link>
     <description>Recent content in Job on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/job/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/job/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Urfit Day 14</title>
+      <link>/posts/urfit-day-13-copy/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-day-13-copy/</guid>
+      <description>&lt;h3 id=&#34;day-14-team-building&#34;&gt;Day-14 Team building&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Urfit Day 13</title>
+      <link>/posts/urfit-day-13/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-day-13/</guid>
+      <description>&lt;h3 id=&#34;day-13-來點css&#34;&gt;Day-13 來點CSS&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Urfit Day 12</title>
+      <link>/posts/urfit-day-12/</link>
+      <pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-day-12/</guid>
+      <description>&lt;h3 id=&#34;day-12-交作業&#34;&gt;Day-12 交作業&lt;/h3&gt;</description>
+    </item>
     <item>
       <title>Urfit Day 11</title>
-      <link>//localhost:1313/posts/urfit-day-11/</link>
+      <link>/posts/urfit-day-11/</link>
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-11/</guid>
+      <guid>/posts/urfit-day-11/</guid>
       <description>&lt;h3 id=&#34;day-11-大病初癒生日&#34;&gt;Day-11 大病初癒&amp;amp;生日&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 09</title>
-      <link>//localhost:1313/posts/urfit-day-09/</link>
+      <link>/posts/urfit-day-09/</link>
       <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-09/</guid>
+      <guid>/posts/urfit-day-09/</guid>
       <description>&lt;h3 id=&#34;day-9-omg-層層包疊&#34;&gt;Day-9 OMG 層層包疊&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 08</title>
-      <link>//localhost:1313/posts/urfit-day-08/</link>
+      <link>/posts/urfit-day-08/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-08/</guid>
+      <guid>/posts/urfit-day-08/</guid>
       <description>&lt;h3 id=&#34;day-8-新的票來了&#34;&gt;Day-8 新的票來了&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 07</title>
-      <link>//localhost:1313/posts/urfit-day-07/</link>
+      <link>/posts/urfit-day-07/</link>
       <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-07/</guid>
+      <guid>/posts/urfit-day-07/</guid>
       <description>&lt;h3 id=&#34;day-7-三元運算燒腦中&#34;&gt;Day-7 三元運算燒腦中&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 06</title>
-      <link>//localhost:1313/posts/urfit-day-06/</link>
+      <link>/posts/urfit-day-06/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-06/</guid>
+      <guid>/posts/urfit-day-06/</guid>
       <description>&lt;h3 id=&#34;day-6-三元運算燒腦中&#34;&gt;Day-6 三元運算燒腦中&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 05</title>
-      <link>//localhost:1313/posts/urfit-day-05/</link>
+      <link>/posts/urfit-day-05/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-05/</guid>
+      <guid>/posts/urfit-day-05/</guid>
       <description>&lt;h3 id=&#34;day-5-要接票了&#34;&gt;Day-5 要接票了！&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 04</title>
-      <link>//localhost:1313/posts/urfit-day-04/</link>
+      <link>/posts/urfit-day-04/</link>
       <pubDate>Thu, 20 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-04/</guid>
+      <guid>/posts/urfit-day-04/</guid>
       <description>&lt;h3 id=&#34;day-4-被react搞暈的一天&#34;&gt;Day-4 被React搞暈的一天&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 03</title>
-      <link>//localhost:1313/posts/urfit-day-03/</link>
+      <link>/posts/urfit-day-03/</link>
       <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-03/</guid>
+      <guid>/posts/urfit-day-03/</guid>
       <description>&lt;h3 id=&#34;day-3-很多會議的一天&#34;&gt;Day-3 很多會議的一天～&lt;/h3&gt;</description>
     </item>
     <item>
       <title>Urfit Day 02</title>
-      <link>//localhost:1313/posts/urfit-day-02/</link>
+      <link>/posts/urfit-day-02/</link>
       <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-02/</guid>
+      <guid>/posts/urfit-day-02/</guid>
       <description>&lt;p&gt;Noob in Coding 新人日誌&lt;/p&gt;</description>
     </item>
     <item>
       <title>UrFit Day 01</title>
-      <link>//localhost:1313/posts/urfit-day-01/</link>
+      <link>/posts/urfit-day-01/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/urfit-day-01/</guid>
+      <guid>/posts/urfit-day-01/</guid>
       <description>&lt;h2 id=&#34;noob-in-coding-新人日誌&#34;&gt;Noob in Coding 新人日誌&lt;/h2&gt;</description>
     </item>
     <item>
       <title>成功轉職～</title>
-      <link>//localhost:1313/posts/feedback/</link>
+      <link>/posts/feedback/</link>
       <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/feedback/</guid>
+      <guid>/posts/feedback/</guid>
       <description>&lt;h2 id=&#34;飯店櫃檯到數位遊牧-零基礎成功轉職工程師&#34;&gt;飯店櫃檯到數位遊牧 零基礎成功轉職工程師&lt;/h2&gt;</description>
     </item>
     <item>
       <title>面試-適才科技</title>
-      <link>//localhost:1313/posts/interview-urfit/</link>
+      <link>/posts/interview-urfit/</link>
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-urfit/</guid>
+      <guid>/posts/interview-urfit/</guid>
       <description>&lt;h2 id=&#34;面試-適才科技&#34;&gt;面試-適才科技&lt;/h2&gt;</description>
     </item>
     <item>
       <title>轉職履歷講座</title>
-      <link>//localhost:1313/posts/resume/</link>
+      <link>/posts/resume/</link>
       <pubDate>Tue, 03 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/resume/</guid>
+      <guid>/posts/resume/</guid>
       <description>&lt;p&gt;履歷講座&lt;/p&gt;</description>
     </item>
     <item>
       <title>面試題合集</title>
-      <link>//localhost:1313/posts/interview-q/</link>
+      <link>/posts/interview-q/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/interview-q/</guid>
+      <guid>/posts/interview-q/</guid>
       <description>&lt;p&gt;關於上課提到的面試題目們-持續更新中&lt;/p&gt;</description>
     </item>
   </channel>

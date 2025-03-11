@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Basic Knowledge on Joanna&#39;s Blog</title>
-    <link>//localhost:1313/tags/basic-knowledge/</link>
+    <link>/tags/basic-knowledge/</link>
     <description>Recent content in Basic Knowledge on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/basic-knowledge/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/basic-knowledge/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git</title>
-      <link>//localhost:1313/posts/git/</link>
+      <link>/posts/git/</link>
       <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/git/</guid>
+      <guid>/posts/git/</guid>
       <description>&lt;p&gt;用 Git 管理檔案&lt;/p&gt;</description>
     </item>
     <item>
       <title>Basic knowledge- Noun</title>
-      <link>//localhost:1313/posts/bk-noun/</link>
+      <link>/posts/bk-noun/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/bk-noun/</guid>
+      <guid>/posts/bk-noun/</guid>
       <description>&lt;h2 id=&#34;基本名詞-持續更新&#34;&gt;基本名詞-持續更新&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Basic knowledge- Terminal</title>
-      <link>//localhost:1313/posts/bk-terminal/</link>
+      <link>/posts/bk-terminal/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/bk-terminal/</guid>
+      <guid>/posts/bk-terminal/</guid>
       <description>&lt;h2 id=&#34;終端機指令集合區-&#34;&gt;終端機指令集合區 🥷&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Resource</title>
-      <link>//localhost:1313/posts/resource/</link>
+      <link>/posts/resource/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/resource/</guid>
+      <guid>/posts/resource/</guid>
       <description>&lt;h2 id=&#34;上課介紹的資源連結&#34;&gt;上課介紹的資源連結&lt;/h2&gt;</description>
     </item>
   </channel>

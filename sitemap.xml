@@ -2,157 +2,166 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2025-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2025-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
+    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/job/</loc>
+    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/my-coding-life/</loc>
+    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-13-copy/</loc>
+    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-13/</loc>
+    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-12/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-11/</loc>
     <lastmod>2025-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/job/</loc>
-    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/my-coding-life/</loc>
-    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
-    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/posts/urfit-day-11/</loc>
-    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/posts/graphql/</loc>
+    <loc>/posts/graphql/</loc>
     <lastmod>2025-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/learning-code/</loc>
+    <loc>/categories/learning-code/</loc>
     <lastmod>2025-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/react/</loc>
+    <loc>/tags/react/</loc>
     <lastmod>2025-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-09/</loc>
+    <loc>/posts/urfit-day-09/</loc>
     <lastmod>2025-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-08/</loc>
+    <loc>/posts/urfit-day-08/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-07/</loc>
+    <loc>/posts/urfit-day-07/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-06/</loc>
+    <loc>/posts/urfit-day-06/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-05/</loc>
+    <loc>/posts/urfit-day-05/</loc>
     <lastmod>2025-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-04/</loc>
+    <loc>/posts/urfit-day-04/</loc>
     <lastmod>2025-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-03/</loc>
+    <loc>/posts/urfit-day-03/</loc>
     <lastmod>2025-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-02/</loc>
+    <loc>/posts/urfit-day-02/</loc>
     <lastmod>2025-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/urfit-day-01/</loc>
+    <loc>/posts/urfit-day-01/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/feedback/</loc>
+    <loc>/posts/feedback/</loc>
     <lastmod>2025-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/apple-watch-app/</loc>
+    <loc>/posts/apple-watch-app/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/job-hunting/</loc>
+    <loc>/categories/job-hunting/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/project/</loc>
+    <loc>/tags/project/</loc>
     <lastmod>2025-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/interview/</loc>
+    <loc>/tags/interview/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/interview-urfit/</loc>
+    <loc>/posts/interview-urfit/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/javascript/</loc>
+    <loc>/tags/javascript/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/candy/</loc>
+    <loc>/posts/candy/</loc>
     <lastmod>2025-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/18th-googlemap/</loc>
+    <loc>/posts/18th-googlemap/</loc>
     <lastmod>2024-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/18th-linepayapi/</loc>
+    <loc>/posts/18th-linepayapi/</loc>
     <lastmod>2024-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/18th-readme/</loc>
+    <loc>/posts/18th-readme/</loc>
     <lastmod>2024-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/resume/</loc>
+    <loc>/posts/resume/</loc>
     <lastmod>2024-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/basic-knowledge/</loc>
+    <loc>/tags/basic-knowledge/</loc>
     <lastmod>2024-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/git/</loc>
+    <loc>/posts/git/</loc>
     <lastmod>2024-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/bk-noun/</loc>
+    <loc>/posts/bk-noun/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/bk-terminal/</loc>
+    <loc>/posts/bk-terminal/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/py-django/</loc>
+    <loc>/posts/py-django/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/py-function/</loc>
+    <loc>/posts/py-function/</loc>
     <lastmod>2024-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/py--legb/</loc>
+    <loc>/posts/py--legb/</loc>
     <lastmod>2024-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/py-set/</loc>
+    <loc>/posts/py-set/</loc>
     <lastmod>2024-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/py-tuple/</loc>
+    <loc>/posts/py-tuple/</loc>
     <lastmod>2024-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/html/</loc>
+    <loc>/tags/html/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/html-setting/</loc>
+    <loc>/posts/html-setting/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/js-closure/</loc>
+    <loc>/posts/js-closure/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/js-variable-hosting/</loc>
+    <loc>/posts/js-variable-hosting/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/py-decorator/</loc>
+    <loc>/posts/py-decorator/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/interview-q/</loc>
+    <loc>/posts/interview-q/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/hugo-buildup-webpage/</loc>
+    <loc>/posts/hugo-buildup-webpage/</loc>
     <lastmod>2024-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/astro-capm/</loc>
+    <loc>/posts/astro-capm/</loc>
     <lastmod>2024-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/js-flowcontrol/</loc>
+    <loc>/posts/js-flowcontrol/</loc>
     <lastmod>2024-10-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/resource/</loc>
+    <loc>/posts/resource/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url>
 </urlset>
