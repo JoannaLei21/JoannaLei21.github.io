@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsupported architecture | Joanna&#39;s Blog</title>
+
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
+
+<link rel="canonical" href="/posts/x86_64/" />
+
+
+
+<meta name="author" content="Joanna Lei" />
+<meta name="description" content="不被支援的架構" />
+
+
+<meta name="keywords" content="Job,Basic Knowledge">
+
+
+
+<meta name="generator" content="Hugo 0.140.1">
+
+
+<meta property="og:url" content="/posts/x86_64/">
+  <meta property="og:site_name" content="Joanna&#39;s Blog">
+  <meta property="og:title" content="Unsupported architecture">
+  <meta property="og:description" content="不被支援的架構">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-17T00:00:00+00:00">
+    <meta property="article:tag" content="Job">
+    <meta property="article:tag" content="Basic Knowledge">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unsupported architecture">
+  <meta name="twitter:description" content="不被支援的架構">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+
+
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav class="mt-4 lg:mt-8 py-4">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!">
+        <div class="h-10 rounded-full">
+          <img src="/cat.png" alt="Joanna&#39;s Bolg" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          Joanna&#39;s Bolg
+        </a>
+        
+        
+      </div>
+      
+    </section>
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+        
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="About">
+    <ion-icon name="information-circle"></ion-icon>About</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="Archives">
+    <ion-icon name="archive"></ion-icon>
+    Archives
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="All Categories">
+    <ion-icon name="grid"></ion-icon>
+    All Categories
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="All Tags">
+    <ion-icon name="pricetags"></ion-icon>
+    All Tags
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+      
+      
+      <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="About">About</div>
+      
+      
+
+      
+      
+
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="Archives">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="All Categories">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="All Tags">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="mt-4 px-4">
+  
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  
+    
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#不被支援的架構">不被支援的架構</a>
+      <ul>
+        <li><a href="#為什麼會有這篇">為什麼會有這篇</a></li>
+        <li><a href="#遇到的問題">遇到的問題</a></li>
+        <li><a href="#錯誤原因">錯誤原因</a></li>
+        <li><a href="#arm64-x86_64">arm64 x86_64</a></li>
+      </ul>
+    </li>
+    <li><a href="#解決方法">解決方法</a>
+      <ul>
+        <li><a href="#安裝rosetta">安裝Rosetta</a></li>
+        <li><a href="#查詢版本">查詢版本</a></li>
+        <li><a href="#安裝x86_64版本">安裝x86_64版本</a></li>
+        <li><a href="#重新安裝專案依賴">重新安裝專案依賴</a></li>
+      </ul>
+    </li>
+    <li><a href="#還是有問題">還是有問題</a>
+      <ul>
+        <li><a href="#沒裝到x86_64版本">沒裝到x86_64版本</a></li>
+        <li><a href="#解決的方法">解決的方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#另一個錯誤">另一個錯誤</a></li>
+    <li><a href="#小結">小結</a></li>
+  </ul>
+</nav>
+
+      <div class="dream-adsense px-5">
+      
+      </div>
+    </div>
+    
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="Unsupported architecture">
+  <meta itemprop="description" content="不被支援的架構">
+  <meta itemprop="datePublished" content="2025-03-17T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-17T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1780">
+  <meta itemprop="keywords" content="Job,Basic Knowledge">
+
+      <header>
+        <h1 itemprop="headline">Unsupported architecture</h1>
+        <p class="text-sm">
+          
+            Monday, Mar 17, 2025
+          
+
+          | <span>4 minute read</span>
+
+          
+          | <span>Updated at
+            
+              Monday, Mar 17, 2025
+            </span>
+          
+        </p>
+        <div class="flex justify-between">
+          <div class="flex items-center">
+  
+  <span>@</span>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Joanna Lei</span>
+    
+  
+  </span>
+</div>
+
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=Unsupported%20architecture&amp;url=/posts/x86_64/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=/posts/x86_64/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=Unsupported%20architecture%20/posts/x86_64/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      
+      <img src="/img/unsupported.png" alt="Unsupported architecture" />
+      
+
+      <h2 id="不被支援的架構">不被支援的架構</h2>
+<h3 id="為什麼會有這篇">為什麼會有這篇</h3>
+<p>算是俗話說的，萬事起頭難嗎？哈哈哈<br>
+為了避免未來再次遇到相同問題時不知所措，也希望幫助其他開發者，我決定整理這次的處理過程，記錄問題的成因與解決方案。</p>
+<h3 id="遇到的問題">遇到的問題</h3>
+<p>在要開啟專案的時候出現了錯誤，錯誤訊息非常簡短</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">error</span> <span style="color:#a6e22e">Unsupported</span> <span style="color:#a6e22e">architecture</span>
+</span></span></code></pre></div><p>這導致專案無法正常執行，無論是啟動伺服器還是運行開發環境，都被這個錯誤擋住。</p>
+<h3 id="錯誤原因">錯誤原因</h3>
+<p>這個錯誤通常與系統架構與執行環境不匹配有關。經過排查，發現問題可能來自於以下幾個方面：</p>
+<ul>
+<li>Node.js 版本與系統架構不匹配：</li>
+</ul>
+<p>我使用的是Mac M4處理器，系統是 arm64 架構，而有些套件可能是為 x86_64 編譯的。</p>
+<p>或者，我當前使用的 Node.js 版本與專案需要的不一致，導致執行時發生錯誤。</p>
+<hr>
+<ul>
+<li>依賴套件不支援當前架構：</li>
+</ul>
+<p>某些 NPM 套件可能是針對特定架構編譯的，因此在 x86_64 環境下無法正常運行。</p>
+<h3 id="arm64-x86_64">arm64 x86_64</h3>
+<p>簡單的瞭解一下 <code>arm64</code> <code>x86_64</code> 是目前在電腦架構中，最主要被使用的兩個架構。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">特性</th>
+          <th style="text-align: left">ARM64 (AArch64)</th>
+          <th style="text-align: left">x86_64 (AMD64)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">架構類型</td>
+          <td style="text-align: left">RISC（精簡指令集）</td>
+          <td style="text-align: left">CISC（複雜指令集）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">功耗</td>
+          <td style="text-align: left">低功耗、省電</td>
+          <td style="text-align: left">相對較高功耗</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">性能</td>
+          <td style="text-align: left">效率高、適合並行運算</td>
+          <td style="text-align: left">單核性能較強</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">應用場景</td>
+          <td style="text-align: left">手機、平板、伺服器、嵌入式設備</td>
+          <td style="text-align: left">桌機、筆電、伺服器</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">指令集</td>
+          <td style="text-align: left">簡單、固定長度指令</td>
+          <td style="text-align: left">複雜、可變長度指令</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">相容性</td>
+          <td style="text-align: left">舊版 ARM 可能不支援 64 位應用</td>
+          <td style="text-align: left">舊版 x86 可執行 64 位模式</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">廠商</td>
+          <td style="text-align: left">Apple（M 系列）、Qualcomm、Ampere、Broadcom</td>
+          <td style="text-align: left">Intel、AMD</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">代表 CPU</td>
+          <td style="text-align: left">Apple M1/M2/M3、高通 Snapdragon</td>
+          <td style="text-align: left">Intel Core、AMD Ryzen</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="解決方法">解決方法</h2>
+<ol>
+<li>先讓電腦的使用架構，從 <code>arm64</code>切換到 <code>x86_64</code> 。</li>
+<li>刪除原本 <code>arm64</code> 4架構下安裝的node version</li>
+<li>指定nvm使用 <code>x86_64</code> 安裝要使用的node version</li>
+<li>切換到剛安裝的version，並確認為 <code>x86_64</code> 版本</li>
+<li>啟動專案</li>
+</ol>
+<h3 id="安裝rosetta">安裝Rosetta</h3>
+<p>專案可能有部分依賴是針對 <code>x86_64</code> 架構，而你的 Mac 是 <code>Apple Silicon</code>（M 系列），因此系統要求透過 <code>Rosetta</code> 轉譯才能執行。</p>
+<p>1.安裝 <code>Rosetta</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$softwareupdate</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">install</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rosetta</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">agree</span><span style="color:#f92672">-</span><span style="color:#a6e22e">to</span><span style="color:#f92672">-</span><span style="color:#a6e22e">license</span>
+</span></span></code></pre></div><p>2.確認 Rosetta 是否可用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$</span><span style="color:#f92672">/</span><span style="color:#a6e22e">usr</span><span style="color:#f92672">/</span><span style="color:#a6e22e">bin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">arch</span>
+</span></span></code></pre></div><p>如果回傳 <code>arm64</code> ，代表你目前運行的是 <code>Apple Silicon</code> 原生架構。</p>
+<p>如果你想要以 <code>x86_64</code>（Intel）模式運行某些應用程式，可以用這個指令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$arch</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">x86_64</span> <span style="color:#a6e22e">zsh</span>
+</span></span></code></pre></div><h3 id="查詢版本">查詢版本</h3>
+<p>首先先查看目前使用的架構為何？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$node</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">arch</span>
+</span></span></code></pre></div><p>會出現 <code>arm64</code> 或 <code>x86_64</code> ，需要在 <code>x86_64</code> 。</p>
+<p>查詢已安裝的node版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">ls</span>
+</span></span></code></pre></div><p>會顯示已安裝的版本，但不會特別註明是哪個架構的：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>       <span style="color:#a6e22e">v16</span>.<span style="color:#ae81ff">20.2</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">v18</span>.<span style="color:#ae81ff">20.7</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-&gt;</span>     <span style="color:#a6e22e">v22</span>.<span style="color:#ae81ff">12.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">default</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">22</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v22</span>.<span style="color:#ae81ff">12.0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">iojs</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span> (<span style="color:#66d9ef">default</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">unstable</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span> (<span style="color:#66d9ef">default</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">node</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">stable</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v22</span>.<span style="color:#ae81ff">12.0</span>) (<span style="color:#66d9ef">default</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stable</span> <span style="color:#f92672">-&gt;</span> <span style="color:#ae81ff">22.12</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v22</span>.<span style="color:#ae81ff">12.0</span>) (<span style="color:#66d9ef">default</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/*</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">jod</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">argon</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v4</span>.<span style="color:#ae81ff">9.1</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">boron</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v6</span>.<span style="color:#ae81ff">17.1</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">carbon</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v8</span>.<span style="color:#ae81ff">17.0</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">dubnium</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v10</span>.<span style="color:#ae81ff">24.1</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">erbium</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v12</span>.<span style="color:#ae81ff">22.12</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">fermium</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v14</span>.<span style="color:#ae81ff">21.3</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gallium</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v16</span>.<span style="color:#ae81ff">20.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">hydrogen</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v18</span>.<span style="color:#ae81ff">20.7</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">iron</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v20</span>.<span style="color:#ae81ff">19.0</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lts</span><span style="color:#f92672">/</span><span style="color:#a6e22e">jod</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">v22</span>.<span style="color:#ae81ff">14.0</span> (<span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">N</span><span style="color:#f92672">/</span><span style="color:#a6e22e">A</span>)
+</span></span></code></pre></div><p>查詢目前版本是給哪個架構使用的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$which</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">xargs</span> <span style="color:#a6e22e">file</span>
+</span></span></code></pre></div><p>會出現下面的訓息，在最後面會顯示 <code>arm64</code> 或 <code>x86_64</code> 。
+apple</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">/Users/your-user-name/.nvm/versions/node/v22.12.0/bin/node: Mach-O 64-bit executable arm64</span>
+</span></span></code></pre></div><p>x86</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">/Users/your-user-name/.nvm/versions/node/v18.20.7/bin/node: Mach-O 64-bit executable x86_64</span>
+</span></span></code></pre></div><h3 id="安裝x86_64版本">安裝x86_64版本</h3>
+<p>先將原本的版本卸載，安裝之後再切換過去</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">uninstall</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">install</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">arch</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x86_64</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">use</span> <span style="color:#ae81ff">18</span>
+</span></span></code></pre></div><h3 id="重新安裝專案依賴">重新安裝專案依賴</h3>
+<p>刪除node並重新安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$rm</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">rf</span> <span style="color:#a6e22e">node_modules</span> <span style="color:#66d9ef">package</span><span style="color:#f92672">-</span><span style="color:#a6e22e">lock</span>.<span style="color:#a6e22e">json</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$yarn</span> <span style="color:#a6e22e">install</span>
+</span></span></code></pre></div><p>必要時也可清快取</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$yarn</span> <span style="color:#a6e22e">cache</span> <span style="color:#a6e22e">clean</span>
+</span></span></code></pre></div><h2 id="還是有問題">還是有問題</h2>
+<h3 id="沒裝到x86_64版本">沒裝到x86_64版本</h3>
+<p>在過程中，我使用指令，指定安裝 <code>x86_64</code> 架構使用的版本18</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">install</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">arch</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x86_64</span>
+</span></span></code></pre></div><p>但是在安裝完成後，確認版本時</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">which</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">xargs</span> <span style="color:#a6e22e">file</span>
+</span></span></code></pre></div><p>顯示的卻是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">/Users/your-user-name/.nvm/versions/node/v22.12.0/bin/node: Mach-O 64-bit executable arm64</span>
+</span></span></code></pre></div><p>恩？怎麼會這樣，明明只定了為什麼安裝下來的還是 <code>arm64</code> 架構使用的？</p>
+<h3 id="解決的方法">解決的方法</h3>
+<p>造成這個狀況，可能有兩個原因</p>
+<ol>
+<li>
+<p>原本安裝的arm64版本沒被刪除<br>
+我們只需要將原本的刪除再重裝一次，就OK，記得先切到另一個版本再刪除，不然會被卡住。<br>
+例如：我正在使用18測試，但沒有成功，需要刪除18重裝，這時候需要先切換到16（或其他），才能將18刪除。</p>
+</li>
+<li>
+<p>系統預設 <code>arm64</code><br>
+因為系統預設就是 <code>arm64</code> 所以系統還是以預設可以使用的版下載，這時候需要確定系統切換到 <code>x86_64</code> 。</p>
+</li>
+</ol>
+<p>A.先刪除現有版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">uninstall</span> <span style="color:#ae81ff">18.20</span>.<span style="color:#ae81ff">7</span>
+</span></span></code></pre></div><p>B.以 <code>x86_64</code> 模式執行 <code>nvm install</code> 。使用 <code>Rosetta 2</code> 來執行 nvm 安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$arch</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">x86_64</span> <span style="color:#a6e22e">zsh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">c</span> <span style="color:#e6db74">&#34;nvm install 18.20.7&#34;</span>
+</span></span></code></pre></div><p>C.確認是否成功安裝 <code>x86_64</code> 版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$which</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">xargs</span> <span style="color:#a6e22e">file</span>
+</span></span></code></pre></div><p>D.應該要顯示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">/Users/your-user-name/.nvm/versions/node/v18.20.7/bin/node: Mach-O 64-bit executable x86_64</span>
+</span></span></code></pre></div><h2 id="另一個錯誤">另一個錯誤</h2>
+<p>如果，在步驟B就出現下面的錯誤訊息，恭喜你跟我一樣XD</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">zsh</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">command</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">found</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">nvm</span>
+</span></span></code></pre></div><p>這個錯誤的原因是，當你用 arch -x86_64 zsh -c &ldquo;nvm install 18.20.7&rdquo; 啟動 x86_64 環境時，nvm 沒有被載入。這通常是因為 nvm 只在 arm64 的 shell session 中載入，而 x86_64 的 shell session 沒有載入 nvm 的環境變數。</p>
+<p>有兩個解決方法</p>
+<ol>
+<li>在 <code>x86_64</code> 環境內手動載入 <code>nvm</code></li>
+</ol>
+<p>A.開啟 <code>x86_64</code> 終端</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$arch</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">x86_64</span> <span style="color:#a6e22e">zsh</span>
+</span></span></code></pre></div><p>這時候已經進入 <code>x86_64</code>
+B.手動載入 <code>nvm</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$export</span> <span style="color:#a6e22e">NVM_DIR</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$HOME/.nvm&#34;</span>
+</span></span><span style="display:flex;"><span>[ <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;$NVM_DIR/nvm.sh&#34;</span> ] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#960050;background-color:#1e0010">\</span>. <span style="color:#e6db74">&#34;$NVM_DIR/nvm.sh&#34;</span>
+</span></span></code></pre></div><p>C.安裝 Node.js 18.20.7（x86_64 版本）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">install</span> <span style="color:#ae81ff">18.20</span>.<span style="color:#ae81ff">7</span>
+</span></span></code></pre></div><p>D.確認版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$which</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">xargs</span> <span style="color:#a6e22e">file</span>
+</span></span></code></pre></div><hr>
+<ol start="2">
+<li>在 <code>Rosetta 2</code> 環境內開啟新終端<br>
+如果你經常需要在 x86_64 環境下使用 Node.js，建議開啟一個 完全使用 Rosetta 2 的終端來執行所有操作。</li>
+</ol>
+<p>A. 開啟 x86_64 Terminal
+B. 前往 Finder ➝ 應用程式 ➝ 工具程式 ➝ Terminal (終端機)
+C. 右鍵 ➝ 取得資訊
+D. 勾選 使用 Rosetta 2 開啟
+E. 重新開啟終端，然後再安裝 Node.js：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">$nvm</span> <span style="color:#a6e22e">install</span> <span style="color:#ae81ff">18.20</span>.<span style="color:#ae81ff">7</span>
+</span></span></code></pre></div><p>這樣未來你每次開啟這個終端時，都會自動以 x86_64 模式運行，避免 nvm 版本不符的問題。</p>
+<h2 id="小結">小結</h2>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <div></div>
+        
+
+        
+        <a class="group btn btn-outline" href="/posts/urfit-day-16/" title="Urfit Day 16">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+            <span class="max-w-48 truncate">Urfit Day 16</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+    </article>
+  </div>
+
+  
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">About Me</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hello I&rsquo;m Joanna, this is my blog</p>
+<p>我會在這邊分享我學習程式語言的心得與筆記</p>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2024 - 2025 Joanna&#39;s Blog
+  </p>
+  
+
+  
+  <p>🌟 A Hugo theme named Dream</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

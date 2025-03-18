@@ -8,19 +8,31 @@
     <loc>/posts/</loc>
     <lastmod>2025-03-18T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/basic-knowledge/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/categories/</loc>
-    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/job/</loc>
-    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/my-coding-life/</loc>
-    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2025-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/urfit-day-13-copy/</loc>
+    <loc>/posts/x86_64/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-16/</loc>
+    <lastmod>2025-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-15/</loc>
+    <lastmod>2025-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/urfit-day-14/</loc>
     <lastmod>2025-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/urfit-day-13/</loc>
@@ -106,9 +118,6 @@
   </url><url>
     <loc>/posts/resume/</loc>
     <lastmod>2024-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/basic-knowledge/</loc>
-    <lastmod>2024-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/git/</loc>
     <lastmod>2024-11-30T00:00:00+00:00</lastmod>

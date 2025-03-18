@@ -6,13 +6,34 @@
     <description>Recent content in Job on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/job/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Unsupported architecture</title>
+      <link>/posts/x86_64/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/x86_64/</guid>
+      <description>&lt;h2 id=&#34;不被支援的架構&#34;&gt;不被支援的架構&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Urfit Day 16</title>
+      <link>/posts/urfit-day-16/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-day-16/</guid>
+      <description>&lt;h3 id=&#34;day-16-終於結束了&#34;&gt;Day-16 終於結束了！！&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Urfit Day 15</title>
+      <link>/posts/urfit-day-15/</link>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-day-15/</guid>
+      <description>&lt;h3 id=&#34;day-15-最後一步了&#34;&gt;Day-15 最後一步了！&lt;/h3&gt;</description>
+    </item>
+    <item>
       <title>Urfit Day 14</title>
-      <link>/posts/urfit-day-13-copy/</link>
+      <link>/posts/urfit-day-14/</link>
       <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-day-13-copy/</guid>
+      <guid>/posts/urfit-day-14/</guid>
       <description>&lt;h3 id=&#34;day-14-team-building&#34;&gt;Day-14 Team building&lt;/h3&gt;</description>
     </item>
     <item>
