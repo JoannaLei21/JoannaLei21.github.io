@@ -10,9 +10,9 @@
     <atom:link href="/categories/my-coding-life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unsupported architecture</title>
-      <link>/posts/x86_64/</link>
+      <link>/posts/unsupported-architecture/</link>
       <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/x86_64/</guid>
+      <guid>/posts/unsupported-architecture/</guid>
       <description>&lt;h2 id=&#34;不被支援的架構&#34;&gt;不被支援的架構&lt;/h2&gt;</description>
     </item>
     <item>
