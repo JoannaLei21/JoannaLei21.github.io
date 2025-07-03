@@ -6,13 +6,41 @@
     <description>Recent content in My Coding Life on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/my-coding-life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>撈名單</title>
+      <link>/posts/urfit-fetchdata/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-fetchdata/</guid>
+      <description>&lt;p&gt;從資料庫做資料轉換&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UrFit Docker Deploy</title>
+      <link>/posts/urfit-docker-deploy/</link>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-docker-deploy/</guid>
+      <description>&lt;h2 id=&#34;從docker-deploy&#34;&gt;從Docker Deploy&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Permission</title>
+      <link>/posts/urfit-permission/</link>
+      <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-permission/</guid>
+      <description>&lt;h2 id=&#34;設定權限篇&#34;&gt;設定權限篇&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>Urfit Day 23</title>
       <link>/posts/urfit-day-23/</link>
       <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
       <guid>/posts/urfit-day-23/</guid>
+      <description>&lt;h3 id=&#34;day-23-轉來轉去&#34;&gt;Day-23 轉來轉去&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Urfit Day 23</title>
+      <link>/posts/urfit-week-7/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/urfit-week-7/</guid>
       <description>&lt;h3 id=&#34;day-23-轉來轉去&#34;&gt;Day-23 轉來轉去&lt;/h3&gt;</description>
     </item>
     <item>
