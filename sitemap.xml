@@ -2,26 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2025-07-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/</loc>
-    <lastmod>2025-07-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/job/</loc>
-    <lastmod>2025-07-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/my-coding-life/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
     <lastmod>2025-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-07-02T00:00:00+00:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/urfit-fetchdata/</loc>
-    <lastmod>2025-07-02T00:00:00+00:00</lastmod>
+    <loc>/tags/job/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/my-coding-life/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/urfit-docker-deploy/</loc>
     <lastmod>2025-06-19T00:00:00+00:00</lastmod>

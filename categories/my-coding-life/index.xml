@@ -6,15 +6,8 @@
     <description>Recent content in My Coding Life on Joanna&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/categories/my-coding-life/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>撈名單</title>
-      <link>/posts/urfit-fetchdata/</link>
-      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/urfit-fetchdata/</guid>
-      <description>&lt;p&gt;從資料庫做資料轉換&lt;/p&gt;</description>
-    </item>
     <item>
       <title>UrFit Docker Deploy</title>
       <link>/posts/urfit-docker-deploy/</link>
